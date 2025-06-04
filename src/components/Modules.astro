@@ -1,0 +1,85 @@
+---
+const modules = [
+  {
+    title: "Home",
+    description:
+      "Un panel completo que visibiliza todo en una sola pantalla, desde eventos hasta artistas",
+    image: "/images/mockup1.png",
+  },
+  {
+    title: "Eventos",
+    description:
+      "Visibiliza tus eventos más cercanos para mantener una comunidad activa e informada",
+    image: "/images/mockup1.png",
+  },
+  {
+    title: "Detalle de Eventos",
+    description:
+      "Comparte detalles específicos de tus eventos para tu público objetivo",
+    image: "/images/mockup1.png",
+  },
+  {
+    title: "Home",
+    description:
+      "Un panel completo que visibiliza todo en una sola pantalla, desde eventos hasta artistas",
+    image: "/images/mockup1.png",
+  },
+  {
+    title: "Eventos",
+    description:
+      "Visibiliza tus eventos más cercanos para mantener una comunidad activa e informada",
+    image: "/images/mockup1.png",
+  },
+  {
+    title: "Detalle de Eventos",
+    description:
+      "Comparte detalles específicos de tus eventos para tu público objetivo",
+    image: "/images/mockup1.png",
+  },
+];
+---
+
+<section class="bg-[#0d0d0d] py-20 relative overflow-hidden">
+  <div class="px-6 mx-auto text-center max-w-7xl">
+    <span
+      class="inline-block px-4 py-1 text-xs tracking-wider text-white uppercase rounded-full bg-zinc-800"
+    >
+      Módulos
+    </span>
+    <h2 class="mt-4 text-3xl font-black text-white md:text-4xl">
+      UNA APP, MÚLTIPLES FORMAS DE VIVIR LA NOCHE
+    </h2>
+  </div>
+
+  <div
+    class="flex gap-6 px-6 mt-12 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
+  >
+    {
+      modules.map((module) => (
+        <div class="min-w-[300px] max-w-[300px] bg-gradient-to-b from-zinc-900 to-zinc-800 text-white rounded-3xl overflow-hidden snap-start shadow-xl border border-zinc-700 hover:shadow-pink-500/20 transition duration-300">
+          <div class="flex flex-col gap-4 p-5">
+            <h3 class="text-lg font-bold">{module.title}</h3>
+            <p class="text-sm text-gray-300">{module.description}</p>
+          </div>
+          <div class="overflow-hidden">
+            <img
+              src={module.image}
+              alt={module.title}
+              class="object-cover w-full transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Decorativos -->
+  <div
+    class="absolute top-0 left-0 w-40 h-40 -translate-x-1/2 -translate-y-1/2 bg-yellow-400 rounded-full opacity-10"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 bg-pink-600 rounded-full w-52 h-52 opacity-10"
+  >
+  </div>
+</section>

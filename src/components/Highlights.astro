@@ -1,0 +1,67 @@
+---
+const events = [
+  {
+    title: "Latin Party",
+    location: "Oslo, Noruega",
+    type: "Evento Destacado",
+    image: "/images/club1.png",
+  },
+  {
+    title: "Party Color",
+    location: "Oslo, Noruega",
+    type: "Evento Destacado",
+    image: "/images/club2.png",
+  },
+  {
+    title: "Last Celebration",
+    location: "Oslo, Noruega",
+    type: "Evento Destacado",
+    image: "/images/club3.png",
+  },
+];
+---
+
+<section class="relative py-16 bg-white">
+  <div class="px-6 mx-auto text-center max-w-7xl">
+    <span
+      class="inline-block px-4 py-1 mb-4 text-xs font-semibold text-white rounded-full bg-p1"
+    >
+      Destacados
+    </span>
+    <h2 class="text-3xl font-extrabold text-black md:text-4xl">
+      <span class="text-p1">HIGHLIGHTS</span> QUE SOLO ENCUENTRAS EN
+      <span class="text-p1"> FESTIVA</span>
+    </h2>
+  </div>
+
+  <div
+    class="grid grid-cols-1 gap-6 px-6 mx-auto mt-12 md:grid-cols-3 max-w-7xl"
+  >
+    {
+      events.map((event) => (
+        <div class="relative overflow-hidden rounded-lg shadow-lg group">
+          <img
+            src={event.image}
+            alt={event.title}
+            class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
+          />
+          <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/70 to-transparent">
+            <h3 class="text-lg font-bold">{event.title}</h3>
+            <p class="text-sm">{event.location}</p>
+            <p class="text-xs opacity-80">{event.type}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Decorativos (puedes convertirlos en bg SVGs si prefieres) -->
+  <div
+    class="absolute top-0 left-0 w-32 h-32 bg-green-200 rounded-full -z-10 translate-x-[-50%] translate-y-[-50%]"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-32 h-32 bg-orange-300 rounded-full -z-10 translate-x-[50%] translate-y-[50%]"
+  >
+  </div>
+</section>

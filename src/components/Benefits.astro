@@ -1,0 +1,107 @@
+---
+const businessBenefits = [
+  {
+    title: "Visibilidad",
+    desc: "Haz visible tu negocio y eventos ante más usuarios.",
+    icon: "🔍",
+  },
+  {
+    title: "Información Clave",
+    desc: "Comparte horarios, ubicación, contacto y mucho más.",
+    icon: "📄",
+  },
+  {
+    title: "Comunicación",
+    desc: "Lanza promociones y comunícalas directamente.",
+    icon: "📢",
+  },
+  {
+    title: "Datos",
+    desc: "Accede a datos sobre asistencia y tendencias.",
+    icon: "📊",
+    soon: true,
+  },
+];
+
+const userBenefits = [
+  {
+    title: "Descubrimientos",
+    desc: "Descubre eventos en tiempo real y cerca de ti.",
+    icon: "💡",
+  },
+  {
+    title: "Detalles",
+    desc: "Accede a detalles clave de cada evento.",
+    icon: "📄",
+  },
+  {
+    title: "Ubicaciones",
+    desc: "Ubica fácilmente cada lugar desde la app.",
+    icon: "📍",
+  },
+  {
+    title: "Planificación",
+    desc: "Recibe recomendaciones y comparte planes con amigos.",
+    icon: "👥",
+  },
+];
+---
+
+<section class="bg-[#0d0d0d] py-20 relative overflow-hidden">
+  <div class="px-6 mx-auto max-w-7xl">
+    <h2 class="mb-12 text-4xl font-black text-white">BENEFICIOS</h2>
+
+    <div class="grid gap-12 md:grid-cols-2">
+      <!-- Negocios -->
+      <div>
+        <h3 class="mb-6 text-2xl font-semibold text-white">
+          Festiva para Negocios
+        </h3>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            businessBenefits.map((benefit) => (
+              <div class="bg-zinc-900 rounded-2xl p-5 shadow-xl transition hover:scale-[1.02] hover:shadow-yellow-400/10 text-white relative">
+                <div class="mb-2 text-3xl">{benefit.icon}</div>
+                <h4 class="mb-1 text-lg font-bold">{benefit.title}</h4>
+                <p class="text-sm text-gray-300">{benefit.desc}</p>
+                {benefit.soon && (
+                  <span class="absolute top-3 right-3 text-[10px] bg-orange-500 text-white px-2 py-0.5 rounded-full animate-pulse">
+                    Soon
+                  </span>
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Usuarios -->
+      <div>
+        <h3 class="mb-6 text-2xl font-semibold text-white">
+          Festiva para Usuarios
+        </h3>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            userBenefits.map((benefit) => (
+              <div class="bg-zinc-900 rounded-2xl p-5 shadow-xl transition hover:scale-[1.02] hover:shadow-pink-500/10 text-white">
+                <div class="mb-2 text-3xl">{benefit.icon}</div>
+                <h4 class="mb-1 text-lg font-bold">{benefit.title}</h4>
+                <p class="text-sm text-gray-300">{benefit.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Círculos decorativos -->
+  <div
+    class="absolute bottom-0 left-0 w-48 h-48 bg-orange-400 rounded-full opacity-10 translate-x-[-30%] translate-y-[30%]"
+  >
+  </div>
+  <div
+    class="absolute top-0 right-0 w-56 h-56 bg-yellow-300 rounded-full opacity-10 translate-x-[30%] translate-y-[-30%]"
+  >
+  </div>
+</section>
