@@ -1,28 +1,55 @@
-<header class="flex items-center justify-between px-6 py-4 bg-dark">
-  <!-- Logo -->
+---
+const items = [
+  {
+    name: "¿Qué es Festiva?",
+    href: "#about",
+  },
+  {
+    name: "Beneficios",
+    href: "#benefits",
+  },
+  {
+    name: "Módulos",
+    href: "#modules",
+  },
+  {
+    name: "Contacto",
+    href: "#contact",
+  },
+  {
+    name: "FAQ’s",
+    href: "#faqs",
+  },
+];
+---
 
-  <img src="images/logo1.png" alt="" class="w-32" />
+<div class="px-8 py-4">
+  <header
+    class="flex items-center justify-between w-full px-6 py-4 border-2 rounded-full border-grey1 bg-grey1/10"
+  >
+    <img src="images/logo1.png" alt="" class="w-32" />
 
-  <!-- Menú -->
-  <nav class="hidden gap-6 text-sm font-semibold md:flex">
-    <a href="#que-es" class="hover:text-primary">¿Qué es Festiva?</a>
-    <a href="#benefits" class="hover:text-primary">Beneficios</a>
-    <a href="#modules" class="hover:text-primary">Módulos</a>
-    <a href="#contact" class="hover:text-primary">Contacto</a>
-    <a href="#faqs" class="hover:text-primary">FAQ’s</a>
-  </nav>
+    <nav class="hidden gap-6 text-sm font-semibold md:flex">
+      {
+        items.map((item, i) => (
+          <a href={item.href} class="hover:text-p1">
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
 
-  <!-- Botones / Idioma -->
-  <div class="flex items-center gap-4">
-    <select class="text-sm text-white bg-transparent outline-none">
-      <option class="text-black">Español</option>
-      <option class="text-black">English</option>
-    </select>
-    <a
-      href="#"
-      class="px-4 py-2 text-sm font-bold text-white rounded-full bg-primary hover:opacity-90"
-    >
-      Descargar
-    </a>
-  </div>
-</header>
+    <div class="flex items-center gap-4">
+      <select class="text-sm text-white bg-transparent outline-none">
+        <option class="text-black">Español</option>
+        <option class="text-black">English</option>
+      </select>
+      <a
+        href="#"
+        class="px-4 py-2 text-sm font-bold text-white rounded-full bg-primary hover:opacity-90"
+      >
+        Descargar
+      </a>
+    </div>
+  </header>
+</div>
