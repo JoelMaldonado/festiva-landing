@@ -1,0 +1,48 @@
+---
+import Carousel from "../react/Carousel";
+
+const slides = [
+  "/images/club1.png",
+  "/images/club2.png",
+  "/images/club3.png",
+  "/images/club4.png",
+];
+---
+
+<section class="relative py-16 overflow-hidden text-black bg-white">
+  <!-- Curva decorativa -->
+  <div
+    class="absolute top-0 left-0 w-full h-16 bg-darkB0 rounded-b-[100%] z-10"
+  >
+  </div>
+
+  <div
+    class="relative z-20 grid items-center gap-12 px-6 mx-auto max-w-7xl md:grid-cols-2"
+  >
+    <!-- Texto -->
+    <div class="space-y-6">
+      <h2 class="text-3xl font-extrabold md:text-4xl">¿QUÉ ES FESTIVA?</h2>
+
+      <div class="flex items-start gap-3">
+        <span class="text-xl text-pink-500">🎉</span>
+        <p class="text-gray-800">
+          Festiva es la app que centraliza la vida nocturna en Oslo. Conecta a
+          personas, locales y organizadores en una sola plataforma con
+          calendario, mapa, menús, reservas y alertas exclusivas.
+        </p>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-xl text-pink-500">🎶</span>
+        <p class="text-gray-800">
+          Nos proyectamos como el nuevo ecosistema digital del entretenimiento
+          en Noruega, conectando a todos los actores de la escena —desde el
+          público hasta discotecas y organizadores— en una experiencia
+          integrada, dinámica y en constante evolución.
+        </p>
+      </div>
+    </div>
+
+    <Carousel client:load images={slides} />
+  </div>
+</section>
