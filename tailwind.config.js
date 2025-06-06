@@ -6,8 +6,9 @@ export default {
       colors: {
         p1: "#FF4081", // rosa Festiva
         dark: "#0D0D0D",
-        darkB0: '#0F0F0F',
-        grey1: '#494949',
+        darkB0: "#0F0F0F",
+        grey1: "#494949",
+        card: "#737373",
       },
       fontFamily: {
         sans: ['"Poppins"', "sans-serif"],

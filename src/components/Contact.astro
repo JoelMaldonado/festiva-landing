@@ -63,7 +63,8 @@ import InputField from "./ui/InputField.astro";
             value=""
           />
           <button
-            type="submit"
+            type="button"
+            data-confetti-button
             class="w-full py-3 font-semibold text-white bg-pink-500 rounded-lg hover:bg-pink-600"
           >
             Solicitar Información
@@ -92,3 +93,12 @@ import InputField from "./ui/InputField.astro";
     </marquee>
   </div>
 </div>
+
+<script>
+  import confetti from "canvas-confetti";
+
+  const botones = document.querySelectorAll("[data-confetti-button]");
+  botones.forEach((boton) => {
+    boton.addEventListener("click", () => confetti());
+  });
+</script>
