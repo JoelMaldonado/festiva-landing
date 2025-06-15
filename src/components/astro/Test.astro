@@ -1,0 +1,13 @@
+<input type="text" id="nombre" placeholder="Tu nombre" />
+<button id="mostrar">Mostrar</button>
+<p id="resultado"></p>
+
+<script type="module" is:inline>
+  const boton = document.getElementById("mostrar");
+  const input = document.getElementById("nombre");
+  const resultado = document.getElementById("resultado");
+
+  boton.addEventListener("click", () => {
+    resultado.textContent = "Hola, " + input.value + "!";
+  });
+</script>

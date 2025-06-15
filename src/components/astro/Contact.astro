@@ -26,8 +26,11 @@ import InputField from "../ui/InputField.astro";
         Oslo’s top nightlife spots are already on <span
           class="font-semibold text-p1">Festiva</span
         >. Is yours?<br />
-        You're missing out on visibility every night. Connect with us today.<br />
-        <span class="font-bold text-p1">This is your moment — don’t miss it.</span>
+        You're missing out on visibility every night. Connect with us today.<br
+        />
+        <span class="font-bold text-p1"
+          >This is your moment — don’t miss it.</span
+        >
       </p>
     </div>
 
@@ -39,30 +42,35 @@ import InputField from "../ui/InputField.astro";
         </p>
         <form class="space-y-4">
           <InputField
+            id="name"
             label="Full Name"
             name="name"
             placeholder="Mark Andrade Mateo"
             value=""
           />
           <InputField
+            id="email"
             label="Email Address"
             name="email"
             placeholder="example@mail.com"
             value=""
           />
           <InputField
+            id="businessName"
             label="Business Name"
             name="business"
             placeholder="Aruba Disco"
             value=""
           />
           <InputField
+            id="local"
             label="Venue Type"
             name="local"
             placeholder="Club, Bar, Restaurant"
             value=""
           />
           <button
+            id="btnSend"
             type="button"
             data-confetti-button
             class="w-full py-3 font-semibold text-white bg-pink-500 rounded-lg hover:bg-pink-600"
@@ -85,11 +93,24 @@ import InputField from "../ui/InputField.astro";
   <img class="w-full" src="images/register.png" alt="" />
 </div>
 
-<script>
-  import confetti from "canvas-confetti";
+<script type="module" is:inline>
+  const btnSend = document.getElementById("btnSend");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const businessInput = document.getElementById("businessName");
+  const localInput = document.getElementById("local");
 
-  const botones = document.querySelectorAll("[data-confetti-button]");
-  botones.forEach((boton) => {
-    boton.addEventListener("click", () => confetti());
+  btnSend.addEventListener("click", () => {
+    const formData = {
+      name: nameInput.value,
+      email: emailInput.value,
+      business: businessInput.value,
+      local: localInput.value,
+    };
+    sendFormData(formData);
   });
+
+  function sendFormData(formData) {
+    console.log("Sending form data:", formData);
+  }
 </script>
