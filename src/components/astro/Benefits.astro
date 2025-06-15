@@ -3,23 +3,23 @@ import CardBenefits from "../ui/CardBenefits.astro";
 
 const businessBenefits = [
   {
-    title: "Visibilidad",
-    desc: "Haz visible tu negocio y eventos ante más usuarios.",
+    title: "Visibility",
+    desc: "Boost your venue’s presence and get discovered by more users.",
     icon: "🔍",
   },
   {
-    title: "Información Clave",
-    desc: "Comparte horarios, ubicación, contacto y mucho más.",
+    title: "Key Information",
+    desc: "Share essential details like hours, location, and contact info. All in one place.",
     icon: "📄",
   },
   {
-    title: "Comunicación",
-    desc: "Lanza promociones y comunícalas directamente.",
+    title: "Direct Communication",
+    desc: "Launch promotions and connect with your audience instantly.",
     icon: "📢",
   },
   {
-    title: "Datos",
-    desc: "Accede a datos sobre asistencia y tendencias.",
+    title: "Data Insights",
+    desc: "Access attendance stats and trend analytics to better understand your audience.",
     icon: "📊",
     soon: true,
   },
@@ -27,23 +27,23 @@ const businessBenefits = [
 
 const userBenefits = [
   {
-    title: "Descubrimientos",
-    desc: "Descubre eventos en tiempo real y cerca de ti.",
+    title: "Live Discovery",
+    desc: "Find real-time events happening around you.",
     icon: "💡",
   },
   {
-    title: "Detalles",
-    desc: "Accede a detalles clave de cada evento.",
+    title: "Event Details",
+    desc: "Get key info for every event — artists, hours, location, and more.",
     icon: "📄",
   },
   {
-    title: "Ubicaciones",
-    desc: "Ubica fácilmente cada lugar desde la app.",
+    title: "Smart Navigation",
+    desc: "Easily locate venues directly through the app.",
     icon: "📍",
   },
   {
-    title: "Planificación",
-    desc: "Recibe recomendaciones y comparte planes con amigos.",
+    title: "Personalized Planning",
+    desc: "Get curated recommendations and plan your night out with friends.",
     icon: "👥",
   },
 ];
@@ -51,20 +51,22 @@ const userBenefits = [
 
 <section id="benefits" class="bg-[#0d0d0d] py-20 relative overflow-hidden">
   <div class="px-6 mx-auto max-w-7xl">
-    <h2 class="mb-12 text-4xl font-black text-white">BENEFICIOS</h2>
+    <h2 class="mb-12 text-4xl font-black text-white">Benefits</h2>
 
     <div class="grid gap-12 md:grid-cols-2">
       <!-- Negocios -->
       <div>
         <h3 class="mb-6 text-2xl font-semibold text-white">
-          Festiva para Negocios
+          Festiva for Businesses
         </h3>
+        <!--
         <CardBenefits
           title="Visibilidad"
           description="Haz visible tu negocio y eventos ante más usuarios."
           icon="/icons/search.svg"
           color="yellow"
         />
+         -->
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {
             businessBenefits.map((benefit) => (
@@ -86,7 +88,7 @@ const userBenefits = [
       <!-- Usuarios -->
       <div>
         <h3 class="mb-6 text-2xl font-semibold text-white">
-          Festiva para Usuarios
+          Festiva for Users
         </h3>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {
