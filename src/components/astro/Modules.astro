@@ -58,26 +58,27 @@ const modules = [
 ];
 ---
 
-<section id="modules" class="relative p-20">
-  <div class="px-6 mx-auto text-center max-w-7xl">
+<section id="modules" class="relative px-4 py-12 md:py-20">
+  <div class="px-4 mx-auto text-center max-w-7xl">
     <TitlePill label="Modules" />
-
     <h2 class="mt-4 text-3xl font-black text-white md:text-4xl">
       One App, Endless Ways to Own the Night
     </h2>
   </div>
 
   <div
-    class="flex gap-6 px-6 mt-12 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
+    class="flex mt-12 gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
     data-carousel
   >
     {
       modules.map((module) => (
-        <CardModule
-          title={module.title}
-          description={module.description}
-          image={module.image}
-        />
+        <div class="snap-center shrink-0 basis-[90%] sm:basis-[45%] md:basis-[30%] lg:basis-[22%] xl:basis-[18%] max-w-full">
+          <CardModule
+            title={module.title}
+            description={module.description}
+            image={module.image}
+          />
+        </div>
       ))
     }
   </div>
@@ -86,14 +87,20 @@ const modules = [
 <script is:inline>
   const carousel = document.querySelector("[data-carousel]");
   let scrollAmount = 0;
-  const itemWidth = 300 + 24; // 300px de la tarjeta + 24px del gap
+  let itemWidth = 0;
   let interval;
 
   function autoScrollCarousel() {
+    const firstItem = carousel?.querySelector("div");
+    if (!firstItem) return;
+
+    itemWidth = firstItem.offsetWidth + 24; // ancho del item + gap
     scrollAmount += itemWidth;
+
     carousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
 
-    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    if (scrollAmount >= maxScroll) {
       setTimeout(() => {
         scrollAmount = 0;
         carousel.scrollTo({ left: 0 });
@@ -102,6 +109,6 @@ const modules = [
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    interval = setInterval(autoScrollCarousel, 3000);
+    interval = setInterval(autoScrollCarousel, 3500);
   });
 </script>
