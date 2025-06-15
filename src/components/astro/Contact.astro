@@ -33,33 +33,33 @@ import InputField from "../ui/InputField.astro";
 
     <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
       <div class="bg-[#1c1c1e] p-8 rounded-3xl w-full max-w-md shadow-lg">
-        <h2 class="mb-6 text-xl font-semibold">Formulario de Contacto</h2>
+        <h2 class="mb-6 text-xl font-semibold">Contact Form</h2>
         <p class="mb-6 text-gray-400">
-          Forma parte del nuevo ecosistema de entretenimiento nocturno.
+          Become part of Norway’s new nightlife ecosystem.
         </p>
         <form class="space-y-4">
           <InputField
-            label="Nombres Completos"
+            label="Full Name"
             name="name"
-            placeholder="Ingresa tus nombres"
+            placeholder="Mark Andrade Mateo"
             value=""
           />
           <InputField
-            label="Correo Electrónico"
+            label="Email Address"
             name="email"
-            placeholder="Ingresa tu correo"
+            placeholder=""
             value=""
           />
           <InputField
-            label="Nombre del negocio"
+            label="Business Name"
             name="business"
-            placeholder="Ingresa tu negocio"
+            placeholder="Aruba Disco"
             value=""
           />
           <InputField
-            label="Tipo de local"
+            label="Venue Type"
             name="local"
-            placeholder="Ingresa el tipo de local"
+            placeholder="Club, Bar, Restaurant"
             value=""
           />
           <button
@@ -67,7 +67,7 @@ import InputField from "../ui/InputField.astro";
             data-confetti-button
             class="w-full py-3 font-semibold text-white bg-pink-500 rounded-lg hover:bg-pink-600"
           >
-            Solicitar Información
+            Send Message
           </button>
         </form>
       </div>
