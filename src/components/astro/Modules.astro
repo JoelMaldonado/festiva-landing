@@ -1,8 +1,17 @@
 ---
+import Image from "astro/components/Image.astro";
 import CardModule from "../ui/CardModule.astro";
 import TitlePill from "../ui/TitlePill.astro";
+import mockup1 from "../../../public/icons/mockup-home.png";
+import mockup2 from "../../../public/icons/mockup-home.svg";
 
 const modules = [
+  {
+    title: "Home",
+    description:
+      "Access a smart dashboard that shows everything — from upcoming events to featured artists",
+    image: "/icons/mockup-home.png",
+  },
   {
     title: "Home",
     description:
@@ -66,6 +75,25 @@ const modules = [
     </h2>
   </div>
 
+  <div class="flex items-center gap-4">
+    <div class="flex flex-col items-center">
+      <h1 class="text-2xl">Astro PNG -> Webp</h1>
+      <Image src={mockup1} alt="" format="webp" />
+    </div>
+    <div class="flex flex-col items-center">
+      <h1 class="text-2xl">Astro SVG -> Webp</h1>
+      <Image src={mockup2} alt="" format="webp" />
+    </div>
+    <div class="flex flex-col items-center">
+      <h1 class="text-2xl">Normal PNG</h1>
+      <img src="icons/mockup-home.png" alt="" />
+    </div>
+    <div class="flex flex-col items-center">
+      <h1 class="text-2xl">Normal SVG</h1>
+      <img src="icons/mockup-home.svg" alt="" />
+    </div>
+  </div>
+
   <div
     class="flex mt-12 gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
     data-carousel
@@ -109,6 +137,6 @@ const modules = [
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    interval = setInterval(autoScrollCarousel, 3500);
+    interval = setInterval(autoScrollCarousel, 5000);
   });
 </script>
