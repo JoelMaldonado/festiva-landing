@@ -1,0 +1,115 @@
+---
+import Image from "astro/components/Image.astro";
+import Layout from "../../layouts/Layout.astro";
+import banner from "../../../public/images/banner-faqs.png";
+import CardGlass from "../../components/ui/CardGlass.astro";
+import Header from "../../components/astro/Header.astro";
+
+const items = [
+  {
+    question: "What is Festiva?",
+    answer:
+      "Festiva is an ecosystem that integrates events, entertainment venues, artists, and local personalities in one place, through a mobile app. It is initially available in Oslo, Norway, and you can download it on your Android or iOS device from Google Play or the App Store.",
+  },
+  {
+    question: "What features or benefits does Festiva offer?",
+    answer:
+      "Festiva is an ecosystem that integrates events, entertainment venues, artists, and local personalities in one place, through a mobile app. It is initially available in Oslo, Norway, and you can download it on your Android or iOS device from Google Play or the App Store.",
+  },
+  {
+    question: "What kind of events or content can I find in Festiva?",
+    answer:
+      "You can discover the best parties and nightlife events, exclusive promotions, trending venues, and emerging artists and personalities.",
+  },
+  {
+    question: "What type of personalities are part of Festiva?",
+    answer:
+      "Artists: DJs/Producers, Musicians, Singers, Bands, Dancers. Personalities: Influencers and Hosts.",
+  },
+  {
+    question: "What types of venues are affiliated with Festiva?",
+    answer: "Nightclubs, Bars, and Restaurants.",
+  },
+  {
+    question: "What are the requirements for a venue to join Festiva?",
+    answer: null,
+    requirements: [
+      "Be located in Oslo, Norway.",
+      "Be legally registered with the appropriate local authorities.",
+      "Belong to the following categories: Nightclub, Bar, or Restaurant (Bars and Restaurants must promote entertainment activities such as live music, karaoke, parties, etc.).",
+      "Have at least 4 months of continuous operation.",
+    ],
+  },
+  {
+    question: "How can I affiliate my business with Festiva?",
+    answer: "If you meet the established requirements, you can:",
+    requirements: [
+      "Go to the 'Join Festiva' section on our website and fill out the designated form.",
+      "Click the 'Request Information' button so we can get in touch with you.",
+      "You can also message us directly via our official social media accounts to request information.",
+      "We will process your request and contact you to schedule a meeting, verify the information, and formalize the affiliation.",
+    ],
+  },
+  {
+    question: "What is a Festivero User?",
+    answer:
+      "A Festivero User is someone who has completed full registration and identity verification within the platform.",
+  },
+  {
+    question: "Why is it important to be registered as a Festiva user?",
+    answer:
+      "Being a verified Festivero User gives you access to exclusive features coming soon, such as service or ticket reservations, digital payments, etc.",
+  },
+  {
+    question: "What does Festiva do with my personal data?",
+    answer:
+      "Your data is only used for identity verification purposes. We do not share your information with third parties.",
+  },
+  {
+    question: "How can I delete my account data if I’m already registered?",
+    answer:
+      "Go to the settings section (the gear icon in the navigation bar), then select 'My Profile'. There you’ll find the option to delete your account data by clicking 'Delete Account'.",
+  },
+];
+---
+
+<Layout>
+  <Header />
+  <div class="flex flex-col items-center">
+    <div class="w-full h-[569px] relative">
+      <Image
+        src={banner}
+        alt="Frequently Asked Questions"
+        format="webp"
+        class="w-full h-full object-cover"
+      />
+
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-white text-[84px] font-bold text-center">
+          PREGUNTAS <span class="text-p1">FRECUENTES</span>
+        </h1>
+      </div>
+    </div>
+    <div class="w-[70%] flex flex-col items-center gap-6 mt-[48px]">
+      {
+        items.map((item) => (
+          <CardGlass class="px-6 py-8 w-full">
+            <h2 class="text-[24px] font-bold text-white">{item.question}</h2>
+
+            {item.answer && (
+              <p class="text-[16px] mt-2 text-white">{item.answer}</p>
+            )}
+
+            {item.requirements && (
+              <ul class="mt-4 list-disc list-inside text-white text-[16px] space-y-1">
+                {item.requirements.map((req) => (
+                  <li>{req}</li>
+                ))}
+              </ul>
+            )}
+          </CardGlass>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

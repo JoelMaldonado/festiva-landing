@@ -1,4 +1,5 @@
 ---
+const baseUrl = "https://festiva.no";
 const items = [
   {
     name: "What is Festiva?",
@@ -14,11 +15,7 @@ const items = [
   },
   {
     name: "FAQs",
-    href: "#contact",
-  },
-  {
-    name: "FAQ’s",
-    href: "#faqs",
+    href: "/faqs",
   },
   {
     name: "Download",
@@ -35,11 +32,18 @@ const items = [
 
     <nav class="hidden gap-6 text-sm font-semibold md:flex">
       {
-        items.map((item, i) => (
-          <a href={item.href} class="hover:text-p1">
-            {item.name}
-          </a>
-        ))
+        items.map((item, i) => {
+          const isPageLink = item.href.startsWith("/");
+          const fullHref = isPageLink
+            ? `${baseUrl}${item.href}`
+            : `${baseUrl}${item.href}`;
+
+          return (
+            <a href={fullHref} class="hover:text-p1">
+              {item.name}
+            </a>
+          );
+        })
       }
     </nav>
   </header>
