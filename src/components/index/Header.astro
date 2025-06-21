@@ -1,5 +1,4 @@
 ---
-const baseUrl = "https://festiva.no";
 const items = [
   {
     name: "What is Festiva?",
@@ -15,7 +14,7 @@ const items = [
   },
   {
     name: "FAQs",
-    href: "/faqs",
+    href: "#faqs",
   },
   {
     name: "Download",
@@ -26,20 +25,15 @@ const items = [
 
 <div class="px-8 py-4">
   <header
-    class="flex items-center justify-between w-full px-6 py-4 border-2 rounded-full border-grey1 bg-grey1/10"
+    class="flex items-center justify-between w-full border-2 rounded-full border-grey1 bg-grey1/10 px-6 py-4"
   >
     <img src="images/logo1.png" alt="" class="w-32" />
 
     <nav class="hidden gap-6 text-sm font-semibold md:flex">
       {
         items.map((item, i) => {
-          const isPageLink = item.href.startsWith("/");
-          const fullHref = isPageLink
-            ? `${baseUrl}${item.href}`
-            : `${baseUrl}${item.href}`;
-
           return (
-            <a href={fullHref} class="hover:text-p1">
+            <a href={item.href} class="hover:text-p1">
               {item.name}
             </a>
           );

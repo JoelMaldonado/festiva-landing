@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+const policies = [
+  {
+    title: "Recolección de datos",
+    content:
+      "Recopilamos información personal como nombre, correo electrónico y preferencias cuando interactúas con nuestro sitio web.",
+  },
+  {
+    title: "Uso de la información",
+    content:
+      "Usamos tus datos para mejorar la experiencia de usuario, personalizar el contenido y procesar transacciones seguras.",
+  },
+  {
+    title: "Cookies",
+    content:
+      "Este sitio utiliza cookies para analizar el tráfico y mejorar la funcionalidad. Puedes desactivarlas en la configuración de tu navegador.",
+  },
+  {
+    title: "Compartición de datos",
+    content:
+      "No vendemos ni compartimos tu información personal con terceros sin tu consentimiento, salvo requerimiento legal.",
+  },
+  {
+    title: "Tus derechos",
+    content:
+      "Tienes derecho a acceder, corregir o eliminar tu información personal en cualquier momento.",
+  },
+];
+---
+
+<Layout>
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-6 text-center">Política de Privacidad</h1>
+
+    <section class="space-y-8">
+      {
+        policies.map((policy) => (
+          <div>
+            <h2 class="text-2xl font-semibold mb-2">{policy.title}</h2>
+            <p class="text-gray-700 leading-relaxed">{policy.content}</p>
+          </div>
+        ))
+      }
+    </section>
+
+    <footer class="mt-12 text-sm text-center text-gray-500">
+      &copy; {new Date().getFullYear()} MiEmpresa. Todos los derechos reservados.
+    </footer>
+  </main>
+</Layout>

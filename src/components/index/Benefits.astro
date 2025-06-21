@@ -49,7 +49,10 @@ const userBenefits = [
 ];
 ---
 
-<section id="benefits" class="bg-[#0d0d0d] py-20 relative overflow-hidden">
+<section
+  id="benefits"
+  class="bg-darkB1 py-20 relative overflow-hidden min-h-screen"
+>
   <div class="px-6 mx-auto max-w-7xl">
     <h2 class="mb-12 text-4xl font-black text-white">Benefits</h2>
 
@@ -105,13 +108,14 @@ const userBenefits = [
     </div>
   </div>
 
-  <!-- Círculos decorativos -->
-  <div
-    class="absolute bottom-0 left-0 w-48 h-48 bg-orange-400 rounded-full opacity-10 translate-x-[-30%] translate-y-[30%]"
-  >
-  </div>
-  <div
-    class="absolute top-0 right-0 w-56 h-56 bg-yellow-300 rounded-full opacity-10 translate-x-[30%] translate-y-[-30%]"
-  >
-  </div>
+  <img
+    src="images/circle_orange_bottom.png"
+    alt="circle_orange"
+    class="absolute bottom-0 left-0"
+  />
+  <img
+    src="images/circle_yellow_right.png"
+    alt="circle_yellow"
+    class="absolute top-2 right-0"
+  />
 </section>

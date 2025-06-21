@@ -21,31 +21,37 @@ const events = [
 ];
 ---
 
-<section class="relative py-16 bg-white">
-  <div class="px-6 mx-auto text-center max-w-7xl">
+<section
+  class="relative py-16 bg-white min-h-screen flex flex-col justify-center gap-8"
+>
+  <div class="px-6 mx-auto text-center max-w-7xl z-10">
     <span
       class="inline-block px-4 py-1 mb-4 text-xs font-semibold text-white rounded-full bg-p1"
     >
       Featured
     </span>
     <h2 class="text-3xl font-extrabold text-black md:text-4xl">
-      <span class="text-p1">Featured</span> Highlights You’ll Only Find on 
+      <span class="text-p1">Featured</span> Highlights You’ll Only Find on
       <span class="text-p1">Festiva</span>
     </h2>
   </div>
 
-  <div
-    class="grid grid-cols-1 gap-6 px-6 mx-auto mt-12 md:grid-cols-3 max-w-7xl"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-3 w-full h-[500px] z-10">
     {
       events.map((event) => (
-        <div class="relative overflow-hidden rounded-lg shadow-lg group">
+        <div class="relative overflow-hidden group">
+          {/* Imagen de fondo */}
           <img
             src={event.image}
             alt={event.title}
-            class="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-105"
+            class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
           />
-          <div class="absolute bottom-0 left-0 right-0 p-4 text-white bg-gradient-to-t from-black/70 to-transparent">
+
+          {/* Capa negra con opacidad */}
+          <div class="absolute inset-0 bg-black/40 z-10" />
+
+          {/* Texto */}
+          <div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-white bg-gradient-to-t from-black/70 to-transparent">
             <h3 class="text-lg font-bold">{event.title}</h3>
             <p class="text-sm">{event.location}</p>
             <p class="text-xs opacity-80">{event.type}</p>
@@ -54,4 +60,16 @@ const events = [
       ))
     }
   </div>
+
+  <img
+    src="/images/circle_green_left.png"
+    alt="circle_green_left"
+    class="absolute z-0 left-0 bottom-8"
+  />
+
+  <img
+    src="/images/circle_orange_right.png"
+    alt="circle_orange_right"
+    class="absolute z-0 right-0 top-4"
+  />
 </section>

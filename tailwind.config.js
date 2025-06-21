@@ -7,6 +7,7 @@ export default {
         p1: "#FF4081", // rosa Festiva
         dark: "#0D0D0D",
         darkB0: "#0F0F0F",
+        darkB1: "#161616",
         grey1: "#494949",
         card: "#737373",
       },

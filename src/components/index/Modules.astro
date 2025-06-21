@@ -1,100 +1,70 @@
 ---
-import Image from "astro/components/Image.astro";
 import CardModule from "../ui/CardModule.astro";
 import TitlePill from "../ui/TitlePill.astro";
-import mockup1 from "../../../public/icons/mockup-home.png";
-import mockup2 from "../../../public/icons/mockup-home.svg";
 
 const modules = [
   {
     title: "Home",
     description:
       "Access a smart dashboard that shows everything — from upcoming events to featured artists",
-    image: "/icons/mockup-home.png",
-  },
-  {
-    title: "Home",
-    description:
-      "Access a smart dashboard that shows everything — from upcoming events to featured artists",
-    image: "/icons/mockup-home.svg",
+    image: "/images/mockup-home.webp",
   },
   {
     title: "Events",
     description:
       "Promote your upcoming events to build an engaged and active community",
-    image: "/images/mockup-events.png",
+    image: "/images/mockup-events.webp",
   },
   {
     title: "Event Details",
     description:
       "Share detailed information about each event so your audience knows exactly what to expect",
-    image: "/images/mockup-event-detail.png",
+    image: "/images/mockup-event-detail.webp",
   },
   {
     title: "Business",
     description:
       "Highlight key information about your business, including hours and contact details.",
-    image: "/images/mockup-business.png",
+    image: "/images/mockup-business.webp",
   },
   {
     title: "Filters",
     description:
       "Easily sort information about events, businesses, and more in a simple and intuitive way.",
-    image: "/images/mockup-filters.png",
+    image: "/images/mockup-filters.webp",
   },
   {
     title: "Business Details",
     description:
       "Share important details about your business with your target audience.",
-    image: "/images/mockup-club-detail.png",
+    image: "/images/mockup-club-detail.webp",
   },
   {
     title: "Schedules",
     description: "Display and keep your business hours up to date.",
-    image: "/images/mockup-schedule.png",
+    image: "/images/mockup-schedule.webp",
   },
   {
     title: "Artists",
     description: "Become a featured artist and gain greater visibility.",
-    image: "/images/mockup-artists.png",
+    image: "/images/mockup-artists.webp",
   },
   {
     title: "Maps",
     description:
       "Easily find and share the location of your business or event.",
-    image: "/images/mockup-maps.png",
+    image: "/images/mockup-maps.webp",
   },
 ];
 ---
 
-<section id="modules" class="relative px-4 py-12 md:py-20">
+<section id="modules" class="relative px-4 py-12 md:py-20 bg-darkB0">
   <div class="px-4 mx-auto text-center max-w-7xl">
     <TitlePill label="Modules" />
     <h2 class="mt-4 text-3xl font-black text-white md:text-4xl">
       One App, Endless Ways to Own the Night
     </h2>
   </div>
-
-  <!--
-  <div class="flex items-center gap-4">
-    <div class="flex flex-col items-center">
-      <h1 class="text-2xl">Astro PNG -> Webp</h1>
-      <Image src={mockup1} alt="" format="webp" />
-    </div>
-    <div class="flex flex-col items-center">
-      <h1 class="text-2xl">Astro SVG -> Webp</h1>
-      <Image src={mockup2} alt="" format="webp" />
-    </div>
-    <div class="flex flex-col items-center">
-      <h1 class="text-2xl">Normal PNG</h1>
-      <img src="icons/mockup-home.png" alt="" />
-    </div>
-    <div class="flex flex-col items-center">
-      <h1 class="text-2xl">Normal SVG</h1>
-      <img src="icons/mockup-home.svg" alt="" />
-    </div>
-  </div>
-   -->
 
   <div
     class="flex mt-12 gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
