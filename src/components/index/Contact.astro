@@ -1,4 +1,5 @@
 ---
+import CardGlass from "../ui/CardGlass.astro";
 import InputField from "../ui/InputField.astro";
 const repeatCount = 10;
 const signupItems = Array.from({ length: repeatCount });
@@ -75,7 +76,7 @@ const signupItems = Array.from({ length: repeatCount });
             id="btnSend"
             type="button"
             data-confetti-button
-            class="w-full py-3 font-semibold text-white bg-pink-500 rounded-lg hover:bg-pink-600"
+            class="w-full py-3 font-semibold text-white bg-p1 rounded-lg hover:bg-pink-600"
           >
             Send Message
           </button>
