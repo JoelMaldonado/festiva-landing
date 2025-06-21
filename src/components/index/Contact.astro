@@ -1,5 +1,7 @@
 ---
 import InputField from "../ui/InputField.astro";
+const repeatCount = 10;
+const signupItems = Array.from({ length: repeatCount });
 ---
 
 <div class="relative min-h-screen overflow-visible bg-darkB0">
@@ -96,30 +98,14 @@ import InputField from "../ui/InputField.astro";
       <div
         class="animate-marquee flex gap-6 px-6 sm:px-8 skew-y-3 text-base sm:text-xl font-semibold"
       >
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span class="inline-block">SIGN UP</span>
-          <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full"></span>
-        </div>
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span class="inline-block">SIGN UP</span>
-          <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full"></span>
-        </div>
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span class="inline-block">SIGN UP</span>
-          <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full"></span>
-        </div>
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span class="inline-block">SIGN UP</span>
-          <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full"></span>
-        </div>
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span class="inline-block">SIGN UP</span>
-          <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full"></span>
-        </div>
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span class="inline-block">SIGN UP</span>
-          <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full"></span>
-        </div>
+        {
+          signupItems.map((_, i) => (
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+              <span class="inline-block">SIGN UP</span>
+              <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
