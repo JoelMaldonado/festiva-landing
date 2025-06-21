@@ -51,31 +51,30 @@ const userBenefits = [
 
 <section
   id="benefits"
-  class="bg-darkB1 py-20 relative overflow-hidden min-h-screen"
+  class="bg-darkB1 py-16 sm:py-20 relative overflow-hidden min-h-screen"
 >
-  <div class="px-6 mx-auto max-w-7xl">
-    <h2 class="mb-12 text-4xl font-black text-white">Benefits</h2>
+  <div class="relative px-4 sm:px-6 mx-auto max-w-7xl z-10">
+    <h2 class="mb-16 text-3xl sm:text-4xl font-black text-white text-center">
+      Benefits
+    </h2>
 
-    <div class="grid gap-12 md:grid-cols-2">
-      <!-- Negocios -->
-      <div>
-        <h3 class="mb-6 text-2xl font-semibold text-white">
+    {/* Contenedor de grupos y divider */}
+    <div
+      class="flex flex-col lg:flex-row items-stretch justify-between gap-12 relative"
+    >
+      {/* Grupo 1: Negocios */}
+      <div class="flex-1">
+        <h3 class="mb-6 text-xl sm:text-2xl font-semibold text-white">
           Festiva for Businesses
         </h3>
-        <!--
-        <CardBenefits
-          title="Visibilidad"
-          description="Haz visible tu negocio y eventos ante más usuarios."
-          icon="/icons/search.svg"
-          color="yellow"
-        />
-         -->
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {
             businessBenefits.map((benefit) => (
-              <div class="bg-zinc-900 rounded-2xl p-5 shadow-xl transition hover:scale-[1.02] hover:shadow-yellow-400/10 text-white relative">
-                <div class="mb-2 text-3xl">{benefit.icon}</div>
-                <h4 class="mb-1 text-lg font-bold">{benefit.title}</h4>
+              <div class="bg-zinc-900 rounded-2xl p-4 sm:p-5 shadow-xl transition hover:scale-[1.02] hover:shadow-yellow-400/10 text-white relative">
+                <div class="mb-2 text-2xl sm:text-3xl">{benefit.icon}</div>
+                <h4 class="mb-1 text-base sm:text-lg font-bold">
+                  {benefit.title}
+                </h4>
                 <p class="text-sm text-gray-300">{benefit.desc}</p>
                 {benefit.soon && (
                   <span class="absolute top-3 right-3 text-[10px] bg-orange-500 text-white px-2 py-0.5 rounded-full animate-pulse">
@@ -88,17 +87,25 @@ const userBenefits = [
         </div>
       </div>
 
-      <!-- Usuarios -->
-      <div>
-        <h3 class="mb-6 text-2xl font-semibold text-white">
+      {/* Divider: horizontal en mobile, vertical en desktop */}
+      <div
+        class="w-full h-px bg-gray-400 lg:w-px lg:h-auto lg:bg-gray-400 lg:mx-6"
+      >
+      </div>
+
+      {/* Grupo 2: Usuarios */}
+      <div class="flex-1">
+        <h3 class="mb-6 text-xl sm:text-2xl font-semibold text-white">
           Festiva for Users
         </h3>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {
             userBenefits.map((benefit) => (
-              <div class="bg-zinc-900 rounded-2xl p-5 shadow-xl transition hover:scale-[1.02] hover:shadow-pink-500/10 text-white">
-                <div class="mb-2 text-3xl">{benefit.icon}</div>
-                <h4 class="mb-1 text-lg font-bold">{benefit.title}</h4>
+              <div class="bg-zinc-900 rounded-2xl p-4 sm:p-5 shadow-xl transition hover:scale-[1.02] hover:shadow-pink-500/10 text-white">
+                <div class="mb-2 text-2xl sm:text-3xl">{benefit.icon}</div>
+                <h4 class="mb-1 text-base sm:text-lg font-bold">
+                  {benefit.title}
+                </h4>
                 <p class="text-sm text-gray-300">{benefit.desc}</p>
               </div>
             ))
@@ -108,14 +115,15 @@ const userBenefits = [
     </div>
   </div>
 
+  {/* Círculos decorativos responsivos */}
   <img
     src="images/circle_orange_bottom.png"
     alt="circle_orange"
-    class="absolute bottom-0 left-0"
+    class="absolute bottom-0 left-0 w-24 sm:w-32 md:w-40 xl:w-48 2xl:w-56 z-0"
   />
   <img
     src="images/circle_yellow_right.png"
     alt="circle_yellow"
-    class="absolute top-2 right-0"
+    class="absolute top-2 right-0 w-24 sm:w-32 md:w-40 xl:w-48 2xl:w-56 z-0"
   />
 </section>

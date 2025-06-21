@@ -25,7 +25,7 @@ const artists = [
 ---
 
 <section class="bg-darkB1 py-20 relative overflow-hidden">
-  <div class="px-6 mx-auto max-w-7xl">
+  <div class="px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
     <div class="mb-12 text-center">
       <span
         class="inline-block px-4 py-1 text-xs tracking-wider text-white uppercase rounded-full bg-zinc-800"
@@ -38,19 +38,19 @@ const artists = [
     </div>
 
     <div
-      class="flex gap-6 px-1 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
+      class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
     >
       {
         artists.map((artist, i) => (
-          <div class="w-[424px] bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg snap-start group hover:shadow-pink-500/20 transition-shadow duration-300 ease-in-out">
+          <div class="min-w-[280px] sm:min-w-[340px] md:min-w-[400px] lg:min-w-[424px] bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg snap-start group hover:shadow-pink-500/20 transition-shadow duration-300 ease-in-out">
             <img
               src={artist.image}
               alt={artist.name}
-              class="object-cover w-full transition-transform duration-500 h-[260px] group-hover:scale-105"
+              class="object-cover w-full h-[200px] sm:h-[240px] md:h-[260px] transition-transform duration-500 group-hover:scale-105"
             />
-            <div class="p-5 text-white">
+            <div class="p-4 sm:p-5 text-white">
               <p class="mb-1 text-sm text-pink-500">{artist.role}</p>
-              <h3 class="text-xl font-bold">{artist.name}</h3>
+              <h3 class="text-lg sm:text-xl font-bold">{artist.name}</h3>
               <p class="mt-2 text-sm text-gray-300 line-clamp-4">
                 {artist.description}
               </p>
@@ -67,7 +67,7 @@ const artists = [
     </div>
   </div>
 
-  <!-- Decorativos -->
+  <!-- Círculos decorativos -->
   <div
     class="absolute bg-yellow-400 rounded-full -left-20 bottom-10 w-60 h-60 opacity-10"
   >
