@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 const { title = "Festiva" } = Astro.props;
+import "aos/dist/aos.css";
 ---
 
 <html lang="en">
@@ -12,5 +13,10 @@ const { title = "Festiva" } = Astro.props;
   </head>
   <body class="bg-darkB0 scroll-smooth">
     <slot />
+
+    <script>
+      import AOS from "aos";
+      AOS.init();
+    </script>
   </body>
 </html>

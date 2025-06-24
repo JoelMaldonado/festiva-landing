@@ -87,7 +87,12 @@ const items = [
   >
     {
       items.map((item) => (
-        <CardGlass class="w-full px-4 sm:px-6 py-6 sm:py-8">
+        <CardGlass
+          class="w-full px-4 sm:px-6 py-6 sm:py-8"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="600"
+        >
           <h2 class="text-[20px] sm:text-[24px] font-bold text-white">
             {item.question}
           </h2>

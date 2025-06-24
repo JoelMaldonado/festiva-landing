@@ -42,7 +42,12 @@ const artists = [
     >
       {
         artists.map((artist, i) => (
-          <div class="min-w-[280px] sm:min-w-[340px] md:min-w-[400px] lg:min-w-[424px] bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg snap-start group hover:shadow-pink-500/20 transition-shadow duration-300 ease-in-out">
+          <div
+            class="min-w-[280px] sm:min-w-[340px] md:min-w-[400px] lg:min-w-[424px] bg-[#1a1a1a] rounded-xl overflow-hidden shadow-lg snap-start group hover:shadow-pink-500/20 transition-shadow duration-300 ease-in-out"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="600"
+          >
             <img
               src={artist.image}
               alt={artist.name}
