@@ -1,78 +1,29 @@
 ---
-import CardBenefits from "../ui/CardBenefits.astro";
 import CardGlass from "../ui/CardGlass.astro";
-
-const businessBenefits = [
-  {
-    title: "Visibility",
-    desc: "Boost your venue’s presence and get discovered by more users.",
-    icon: "🔍",
-  },
-  {
-    title: "Key Information",
-    desc: "Share essential details like hours, location, and contact info. All in one place.",
-    icon: "📄",
-  },
-  {
-    title: "Direct Communication",
-    desc: "Launch promotions and connect with your audience instantly.",
-    icon: "📢",
-  },
-  {
-    title: "Data Insights",
-    desc: "Access attendance stats and trend analytics to better understand your audience.",
-    icon: "📊",
-    soon: true,
-  },
-];
-
-const userBenefits = [
-  {
-    title: "Live Discovery",
-    desc: "Find real-time events happening around you.",
-    icon: "💡",
-  },
-  {
-    title: "Event Details",
-    desc: "Get key info for every event — artists, hours, location, and more.",
-    icon: "📄",
-  },
-  {
-    title: "Smart Navigation",
-    desc: "Easily locate venues directly through the app.",
-    icon: "📍",
-  },
-  {
-    title: "Personalized Planning",
-    desc: "Get curated recommendations and plan your night out with friends.",
-    icon: "👥",
-  },
-];
 
 const negocios = [
   {
     icon: "/icons/search.svg",
-    title: "Visibilidad",
-    text: "Haz visible tu negocio y eventos ante más usuarios.",
+    title: "Visibility",
+    text: "Boost your venue’s presence and get discovered by more users",
     color: "bg-yellow",
   },
   {
     icon: "/icons/list_alt.svg",
-    title: "Información Clave",
-    text: "Comparte horarios, ubicación, contacto y mucho más.",
+    title: "Key Information",
+    text: "Share essential details like hours, location, and contact info. All in one place.",
     color: "bg-blue",
   },
   {
     icon: "/icons/campaign.svg",
-    title: "Comunicación",
-    text: "Lanza promociones y comunícalas directamente.",
+    title: "Direct Communication",
+    text: "Launch promotions and connect with your audience instantly.",
     color: "bg-green",
   },
   {
     icon: "/icons/bars.svg",
-    title: "Datos",
-    text: "Accede a datos sobre asistencia y tendencias.",
-    tag: "Soon",
+    title: "Data Insights",
+    text: "Access attendance stats and trend analytics to better understand your audience.",
     color: "bg-orange",
   },
 ];
@@ -80,26 +31,26 @@ const negocios = [
 const usuarios = [
   {
     icon: "/icons/lightbulb.svg",
-    title: "Descubrimientos",
-    text: "Descubre eventos en tiempo real y cerca de ti.",
+    title: "Live Discovery",
+    text: "Find real-time events happening around you.",
     color: "bg-yellow",
   },
   {
     icon: "/icons/list_alt.svg",
-    title: "Detalles",
-    text: "Accede a detalles clave de cada evento.",
+    title: "Event Details",
+    text: "Get key info for every event — artists, hours, location, and more.",
     color: "bg-blue",
   },
   {
     icon: "/icons/distance.svg",
-    title: "Ubicaciones",
-    text: "Ubica fácilmente cada lugar desde la app.",
+    title: "Smart Navigation",
+    text: "Easily locate venues directly through the app.",
     color: "bg-green",
   },
   {
     icon: "/icons/diversity.svg",
-    title: "Planificación",
-    text: "Recibe recomendaciones y comparte planes con amigos.",
+    title: "Personalized Planning",
+    text: "Get curated recommendations and plan your night out with friends.",
     color: "bg-orange",
   },
 ];
@@ -117,7 +68,7 @@ const usuarios = [
       <h3 class="text-2xl font-semibold mb-6">Festiva para Negocios</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {
-          negocios.map(({ icon, title, text, tag, color }) => (
+          negocios.map(({ icon, title, text, color }) => (
             <CardGlass class="p-6 hover:shadow-yellow-400/10">
               <div
                 class={`w-8 h-8 rounded-full bg-yellow-500 mb-2 flex items-center justify-center ${color}`}
