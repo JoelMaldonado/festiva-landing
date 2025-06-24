@@ -39,24 +39,41 @@ const events = [
     </h2>
   </div>
 
-  <!-- Cards -->
   <div
-    class="grid grid-cols-1 md:grid-cols-3 w-full h-[400px] sm:h-[450px] md:h-[500px] z-10"
+    class="hidden md:grid grid-cols-3 gap-6 w-full h-[500px] z-10 px-4 sm:px-6"
   >
     {
       events.map((event) => (
-        <div class="relative group w-full md:aspect-auto h-full overflow-hidden">
-          {/* Imagen de fondo */}
+        <div class="relative group w-full h-full overflow-hidden">
           <img
             src={event.image}
             alt={event.title}
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
-
-          {/* Capa negra con opacidad */}
           <div class="absolute inset-0 bg-black/40 z-10" />
+          <div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-white bg-gradient-to-t from-black/70 to-transparent">
+            <h3 class="text-lg font-bold">{event.title}</h3>
+            <p class="text-sm">{event.location}</p>
+            <p class="text-xs opacity-80">{event.type}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 
-          {/* Texto */}
+  <!-- Mobile carousel (solo visible en mobile) -->
+  <div
+    class="md:hidden w-full overflow-x-auto flex gap-4 px-4 sm:px-6 scroll-snap-x scroll-snap-mandatory"
+  >
+    {
+      events.map((event) => (
+        <div class="min-w-[90%] shrink-0 snap-center relative group h-[400px] sm:h-[450px] rounded-xl overflow-hidden">
+          <img
+            src={event.image}
+            alt={event.title}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-black/40 z-10" />
           <div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-white bg-gradient-to-t from-black/70 to-transparent">
             <h3 class="text-lg font-bold">{event.title}</h3>
             <p class="text-sm">{event.location}</p>

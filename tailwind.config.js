@@ -19,6 +19,11 @@ export default {
         darkB1: "#161616",
         grey1: "#494949",
         card: "#737373",
+        yellow: "#F4C520",
+        blue: "#1463FE",
+        green: "#00C64F",
+        orange: "#FD8B06",
+        grey2: "#D9D9D9"
       },
       fontFamily: {
         sans: ['"Poppins"', "sans-serif"],
