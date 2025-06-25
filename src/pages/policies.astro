@@ -1,51 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 const policies = [
   {
-    title: "Recolección de datos",
+    title: "Data Collection",
     content:
-      "Recopilamos información personal como nombre, correo electrónico y preferencias cuando interactúas con nuestro sitio web.",
+      "We collect personal information such as your name, email address, and preferences when you interact with our app.",
   },
   {
-    title: "Uso de la información",
+    title: "Use of Information",
     content:
-      "Usamos tus datos para mejorar la experiencia de usuario, personalizar el contenido y procesar transacciones seguras.",
+      "We use your data to enhance user experience, personalize content, and process secure transactions.",
   },
   {
     title: "Cookies",
     content:
-      "Este sitio utiliza cookies para analizar el tráfico y mejorar la funcionalidad. Puedes desactivarlas en la configuración de tu navegador.",
+      "This app uses cookies to analyze traffic and improve functionality. You can disable cookies in your browser settings.",
   },
   {
-    title: "Compartición de datos",
+    title: "Data Sharing",
     content:
-      "No vendemos ni compartimos tu información personal con terceros sin tu consentimiento, salvo requerimiento legal.",
+      "We do not sell or share your personal information with third parties without your consent, unless required by law.",
   },
   {
-    title: "Tus derechos",
+    title: "Your Rights",
     content:
-      "Tienes derecho a acceder, corregir o eliminar tu información personal en cualquier momento.",
+      "You have the right to access, correct, or delete your personal information at any time.",
   },
 ];
 ---
 
 <Layout>
   <main class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-6 text-center">Política de Privacidad</h1>
+    <h1 class="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
 
     <section class="space-y-8">
       {
         policies.map((policy) => (
           <div>
             <h2 class="text-2xl font-semibold mb-2">{policy.title}</h2>
-            <p class="text-gray-700 leading-relaxed">{policy.content}</p>
+            <p class="leading-relaxed">{policy.content}</p>
           </div>
         ))
       }
     </section>
 
-    <footer class="mt-12 text-sm text-center text-gray-500">
-      &copy; {new Date().getFullYear()} MiEmpresa. Todos los derechos reservados.
+    <footer class="mt-12 text-sm text-center">
+      &copy; {new Date().getFullYear()} Festiva. All rights reserved.
     </footer>
   </main>
 </Layout>
