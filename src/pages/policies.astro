@@ -1,189 +1,609 @@
 ---
-import Layout from "../layouts/Layout.astro";
+const sections = [
+  { id: "terms", title: "Terms and Conditions of Use" },
+  { id: "privacy", title: "Privacy Policy" },
+];
 ---
 
-<Layout>
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-8 text-center">
-      Terms and Conditions & Privacy Policy
-    </h1>
-
-    <article class="space-y-10">
-      <section>
-        <h2 class="text-2xl font-semibold mb-4">Terms and Conditions of Use</h2>
-        <p class="mb-2">Effective Date: June 06, 2025</p>
-        <p>
-          These Terms and Conditions regulate the use of the Festiva mobile
-          application for Android and iOS devices. Use of the application is
-          prohibited without full acceptance of these terms.
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Festiva — Términos y Condiciones & Política de Privacidad</title>
+    <meta
+      name="description"
+      content="Texto completo convertido desde PDF a Astro con Tailwind."
+    />
+  </head>
+  <body class="bg-white">
+    <header class="border-b">
+      <div class="mx-auto max-w-5xl px-4 py-8">
+        <h1 class="text-3xl font-bold">
+          Festiva — Términos y Condiciones & Política de Privacidad
+        </h1>
+        <p class="mt-2 text-sm text-gray-600">
+          Generado automáticamente desde PDF el 2025-08-08.
         </p>
-      </section>
+      </div>
+    </header>
 
-      <section>
-        <h2 class="text-xl font-semibold mb-2">1. Definitions</h2>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>
-            <strong>Clients:</strong> Individuals or organizations offering services
-            or content within the app.
-          </li>
-          <li>
-            <strong>Personalities:</strong> Social media influencers or artists.
-          </li>
-          <li>
-            <strong>Users:</strong> Anyone who installs or uses the application.
-          </li>
-          <li>
-            <strong>Businesses or Services:</strong> Commercial entities listed in
-            the application.
-          </li>
-          <li>
-            <strong>Beneficiary Consumers:</strong> Individuals listed in reservations.
-          </li>
-          <li>
-            <strong>Content:</strong> Any data or media uploaded by users or clients.
-          </li>
-          <li>
-            <strong>Event:</strong> A planned activity organized and executed by
-            a party at a specific location.
-          </li>
-        </ul>
-      </section>
+    <main
+      class="mx-auto max-w-5xl px-4 py-10 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-10"
+    >
+      <aside class="lg:sticky lg:top-6 h-max">
+        <nav class="rounded-lg border p-4">
+          <p class="mb-3 font-semibold">Contenido</p>
+          <ul class="space-y-2 text-sm">
+            {
+              sections.map((s) => (
+                <li>
+                  <a class="hover:underline" href={"#" + s.id}>
+                    {s.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </aside>
 
-      <section>
-        <h2 class="text-xl font-semibold mb-2">2. Application</h2>
-        <p>
-          Festiva provides services such as publishing event and service
-          information, ticket reservations, and audio playback.
-        </p>
-      </section>
+      <article class="prose prose-zinc max-w-none">
+        <section id="terms">
+          <h2>Términos y Condiciones de Uso</h2>
+          <p>
+            Terms and Conditions of Use Privacy Policy<br /><h2>
+              1. Definitions 1. Consent
+            </h2><br /><h2>2. Application 2. Purpose of Information</h2><br
+            /><h2>3. Publications 3. Automatically Collected Information</h2><br
+            /><h2>4. Events 4. Events</h2><br /><h2>
+              5. Personalities 4.1 Information Provided by the USER for Profile
+              Creation
+            </h2><br /><h2>
+              6. Businesses or Services 4.2 Information Provided by the USER for
+              Reservation
+            </h2><br />Services<br /><h2>
+              7. Users 4.3 Information Provided by the USER about Beneficiary
+            </h2><br />Consumers<br /><h2>
+              8. Permitted Conduct 5. Use of Collected Information
+            </h2><br /><h2>9. Reservations 6. Businesses or Services</h2><br
+            /><h2>
+              10. Authorization to Collect Information 7. Third Parties
+            </h2><br /><h2>
+              11. License to Use Published Information 8. USER and CLIENT Rights
+            </h2><br /><h2>
+              11.1. Intellectual Property of the Content 9. Retention of
+              Information
+            </h2><br /><h2>
+              11.2. Application Use License 10. Deletion of Collected Data
+            </h2><br /><h2>11.3. Permission to Use Device for Content</h2><br
+            />Playback 11. Modifications to the Privacy Policy<br /><h2>
+              12. Prohibited Publications 12. Procedure for Exercising Habeas
+              Data Rights
+            </h2><br /><h2>13. Client Responsibility 13. Unsubscribing</h2><br
+            /><h2>14. Changes in THE APPLICATION 14. Effective Date</h2><br
+            /><h2>15. Cost of THE APPLICATION and Related</h2><br />Services<br
+            /><h2>16. Termination</h2><br /><h2>
+              17. Modifications to the Terms and Conditions
+            </h2><br /><h2>18. Implied Acceptance</h2><br /><h2>
+              19. Unsubscribing
+            </h2><br /><h2>20. Deletion of USER Information</h2><br /><h2>
+              21. Intellectual Property Claims
+            </h2><br /><h2>22. Limitation of Liability</h2><br /><h2>
+              23. Contact
+            </h2><br /><h2>24. Governing Law and Jurisdiction</h2><br /><h2>
+              25. Effective Date
+            </h2>
+          </p>
+          <p>Terms and Conditions of Use</p>
+          <p>Effective Date: June 06, 2025</p>
+          <p>
+            Between you, hereinafter referred to as &quot;USER,&quot; and
+            FESTIVA AS , a company established<br />on April 30, 2025 , with
+            organization number 935 459 494 , hereinafter referred to as “THE<br
+            />COMPANY &quot;, these Terms and Conditions of Use (&quot;TERMS AND
+            CONDITIONS&quot;) are set<br />forth to regulate the use of the
+            mobile application for Android and iOS devices called<br />Festiva
+            (&quot;THE APPLICATION&quot;), which the USER declares to have read
+            and fully accepted.<br />Use of THE APPLICATION is prohibited
+            without accepting the TERMS AND<br />CONDITIONS in their entirety,
+            as established below:
+          </p>
+          <h2>1. Definitions</h2>
+          <p>
+            (a) Clients: Refers to individuals, organizers, and/or event
+            managers, as well as businesses or related<br />services, distinct
+            from THE COMPANY, who are present in THE APPLICATION.<br />(b)
+            Personalities: Refers to individuals engaged in entertainment as
+            social media content producers<br />(influencers) and artists.<br
+            />(c) Users: Any individual or entity that has installed and/or is
+            using THE APPLICATION.
+          </p>
+          <p>
+            (d) Businesses or Services: Refers to individuals or entities, of
+            any legal form, formalized or irregular,<br />engaged in lawful
+            commercial activity, published in THE APPLICATION.<br />(e)
+            Beneficiary Consumers: Any individual listed in the reservation(s)
+            generated by registered<br />USER(s).<br />(f) Content: Any
+            information, data, or set of data uploaded by CLIENTS and/or USERS.
+          </p>
+          <p>
+            (g) Event: Any activity organized and planned with a limited
+            duration and specific motivation by a<br />natural or legal person,
+            referred to in these TERMS AND CONDITIONS as the Event Organizer,
+            and<br />executed by a natural or legal person, who may be the same
+            as the Event Organizer, referred to as the<br />Event Manager, in a
+            specific location which can be a Business or Service, as mentioned
+            in subsection<br />(c) of this clause, or another location.
+          </p>
+          <h2>2. Application</h2>
+          <p>
+            FESTIVA (THE APPLICATION) is the application software developed for
+            mobile devices with<br />Android or iOS operating systems, whose
+            functionality is focused on offering the following features<br
+            />(&quot;SERVICES&quot;):
+          </p>
+          <p>
+            (a) Publishing information related to events, personalities,
+            businesses, or services in general<br />(&quot;CLIENTS&quot;) to be
+            perceived by USERS of THE APPLICATION through images, videos,
+            sounds,<br />and/or notifications;<br />(b) Reservation of tickets
+            or products offered by CLIENTS by USERS; and
+          </p>
+          <p>(c) Publication and/or reproduction of sounds.</p>
+          <h2>3. Publications</h2>
+          <p>
+            The information published in THE APPLICATION is intended exclusively
+            for individuals located<br />within the territory of Norway at the
+            time of its use.
+          </p>
+          <h2>4. Events</h2>
+          <p>
+            THE COMPANY assumes no responsibility for any situation related to:
+          </p>
+          <p>
+            (a) The planning and/or execution of any event published in THE
+            APPLICATION.
+          </p>
+          <p>
+            (b) The products and/or services offered at the events published in
+            THE APPLICATION.
+          </p>
+          <p>
+            (c) The conduct of any person present at the event published in THE
+            APPLICATION, whether<br />attendees, organizers, or any other kind.
+          </p>
+          <p>
+            The USER acknowledges and accepts that the SERVICES offered in THE
+            APPLICATION consist of<br />digital services and content.
+          </p>
+          <h2>5. Personalities</h2>
+          <p>
+            THE COMPANY assumes no responsibility for the actions, conduct, or
+            content displayed by<br />Personalities, whether within or outside
+            THE APPLICATION.
+          </p>
+          <h2>6. Businesses or Services</h2>
+          <p>
+            THE COMPANY assume no responsibility for any aspect related to
+            businesses or services, including<br />the organization and/or
+            execution of their events, as well as the products and/or services
+            offered by<br />them.
+          </p>
+          <h2>7. Users</h2>
+          <p>
+            Any USER, whether registered or not, declares to be over eighteen
+            (18) years old and that the<br />information provided by them to THE
+            APPLICATION about themselves, or any other person, is<br />truthful,
+            under the penalty of incurring civil, criminal, or administrative
+            liability, as appropriate. The<br />USER is solely responsible for
+            the information provided about themselves or the Beneficiary<br
+            />Consumers and declares to have their consent to provide it.
+          </p>
+          <h2>8. Permitted Conduct</h2>
+          <p>
+            CLIENTS and USERS must maintain good conduct in the use of THE
+            APPLICATION and respect<br />applicable legislation, morality, good
+            customs, and these TERMS AND CONDITIONS. The USER<br />and/or CLIENT
+            agrees to abide by these TERMS AND CONDITIONS as rules of conduct,
+            which<br />will result in the termination of their use and the
+            contractual relationship in case of non -compliance.<br
+            />Additionally, the USER and/or CLIENT acknowledges that it is
+            strictly prohibited to use, download,<br />or record sounds, copy,
+            reproduce, redistribute, record, transfer, present, frame, link, or
+            display them<br />to the public, transmit or make them available to
+            the public, or otherwise infringe the intellectual<br />property
+            rights of CLIENTS, USERS, and/or THE APPLICATION. It is also
+            prohibited to import or<br />copy any local file that you do not
+            have the legal right to import or copy in this way, as well as to<br
+            />transfer copies of cached CONTENT from an authorized device to any
+            other device by any means.
+          </p>
+          <h2>9. Reservations</h2>
+          <p>
+            THE APPLICATION allows, with the consent of the Client, reservations
+            of the products or services<br />provided by them, with such
+            reservations having a limited validity period. THE APPLICATION is<br
+            />not responsible for any aspect related to the execution of
+            reservations. The responsibility of THE<br />APPLICATION regarding
+            the reservation service extends exclusively to the issuance of the<br
+            />reservation voucher to the USER and the transmission of the
+            information contained therein to the<br />Client for verification
+            and execution of the service. The vouchers will include a
+            reservation code, the<br />USER&#x27;s information who made it, the
+            validity period of the reservation, and a unique QR code.
+          </p>
+          <h2>10. Authorization to Collect Information</h2>
+          <p>
+            Registered USERS authorize THE APPLICATION to store data related to
+            their identification, contact<br />information, date of birth, and
+            location, as well as related Beneficiary Consumers, to ensure the<br
+            />functioning and development of THE APPLICATION. Additionally,
+            USERS acknowledge and accept<br />that all processes related to
+            USERS&#x27; data, whether registered or not, and beneficiary
+            consumers, are<br />governed by THE APPLICATION&#x27;s Privacy
+            Policies.
+          </p>
+          <h2>11. License to Use Published Information</h2>
+          <p>
+            Personalities, businesses, or services, as well as event organizers
+            and/or managers, in general, the<br />CLIENT, declare to authorize,
+            free of charge, irrevocably, non-exclusively, and without a time
+            limit,<br />THE COMPANY to use, publish, adapt, reproduce and/or
+            modify images, sounds, and/or videos<br />uploaded, provided, and/or
+            sent to THE APPLICATION, to make such information known to USERS<br
+            />of THE APPLICATION. This authorization aims to make such
+            information known to USERS of THE<br />APPLICATION, as well as for
+            its publication on Festiva&#x27;s official accounts. The mentioned
+            parties<br />declare to have the necessary legitimacy to confer the
+            mentioned authorizations, being, consequently,<br />solely
+            responsible for any violation of third -party rights infringed by
+            such images, sounds, and/or<br />videos, as well as for any
+            inaccuracy derived from them concerning the published CONTENT.
+          </p>
+          <p>
+            <h2>
+              11.1. Intellectual Property of the Content: The CLIENT and/or
+              USER, by uploading CONTENT
+            </h2><br />to THE APPLICATION, declares under oath to THE COMPANY
+            that they are the legitimate owner<br />of the CONTENT uploaded,
+            provided, and/or published in THE APPLICATION, or that they have
+          </p>
+          <p>
+            all necessary permissions to ensure the legality of its use; thus
+            guaranteeing that the mentioned<br />CONTENT does not infringe,
+            within the framework of these TERMS AND CONDITIONS, as well<br />as
+            applicable law, the property rights of any third party.
+          </p>
+          <p>
+            <h2>
+              11.2. Application Use License: The CLIENT and/or USER, as the
+              owner of the CONTENT
+            </h2><br />published in THE APPLICATION, will not see their
+            intellectual property rights affected by such<br />CONTENT, thereby
+            granting the COMPANY a worldwide, irrevocable, fully paid, royalty
+            -free,<br />sublicensable, transferable, and non -exclusive license
+            to reproduce any CONTENT, make it available,<br />present and
+            display it, translate, modify it, create derivative works from it,
+            distribute or otherwise use<br />it through any medium, whether
+            alone or combined with other CONTENT, in any manner, with any<br
+            />method or technology, whether known today or created in the
+            future, in relation to the SERVICES<br />provided by the
+            application.
+          </p>
+          <p>
+            <h2>
+              11.3. Permission to Use Device for Content Playback : The USER
+              grants permission to the
+            </h2><br />COMPANY to use the processor, memory, cache, internet
+            connection, or mobile data, hardware,<br />and/or software of their
+            device to facilitate the functioning of THE APPLICATION.
+          </p>
+          <h2>12. Prohibited Publications</h2>
+          <p>
+            Publications related to firearms, prohibited narcotic or
+            psychotropic substances, sexual activities, and<br />alcohol, as
+            well as goods, services, or activities whose dissemination has been
+            prohibited or restricted,<br />either temporarily or permanently,
+            for reasons of public health or the guarantee of individuals&#x27;
+            rights<br />by laws or competent authorities, or has not been
+            authorized, as applicable, are prohibited. Therefore,<br />THE
+            COMPANY reserves the right to remove any publication from THE
+            APPLICATION that does<br />not comply with these TERMS AND
+            CONDITIONS.
+          </p>
+          <h2>13. Client Responsibility</h2>
+          <p>
+            Event organizers and/or managers, personalities, and businesses or
+            services using THE<br />APPLICATION are solely responsible for the
+            legality of their activities, products, articles, or services<br
+            />provided, and must comply with all regulations inherent to their
+            activities and the authorizations for<br />their development. They
+            commit to immediately notify THE COMPANY or the person designated by
+          </p>
+          <p>
+            them, through the established channels for this purpose, of any use
+            or irregularity related to the<br />information published in THE
+            APPLICATION.
+          </p>
+          <h2>14. Changes in THE APPLICATION</h2>
+          <p>
+            THE COMPANY reserves the right to make changes to the application at
+            any time and without prior<br />notice. In such a case, the USER
+            must download the relevant update from the appropriate mobile<br
+            />application distribution platform compatible with their
+            device&#x27;s operating system, as long as the<br />updates are
+            supported by the device in question. We are not responsible for the
+            continuity of the<br />application&#x27;s use on devices that no
+            longer meet the minimum requirements for its operation. THE<br
+            />APPLICATION may withdraw or suspend the provision of its SERVICES
+            to USERS and/or<br />CLIENTS who fail to comply with these TERMS AND
+            CONDITIONS at any time and without prior<br />notice.
+          </p>
+          <h2>15. Cost of THE APPLICATION and Related Services</h2>
+          <p>
+            THE APPLICATION is free on any of the distribution platforms where
+            it is available. However, we<br />reserve the right to economically
+            value, charge, and/or distribute a specific version of THE<br
+            />APPLICATION, different from the free version, and/or provide
+            additional services for a fee. In any<br />case, the registered USER
+            and/or CLIENT will be informed in advance of any cost for the
+            download,<br />maintenance, or operation of THE APPLICATION.
+          </p>
+          <h2>16. Termination</h2>
+          <p>
+            THE APPLICATION reserves the right to terminate its services and the
+            provision of licenses to<br />USERS at any time and without prior
+            notice.
+          </p>
+          <h2>17. Modifications to the Terms and Conditions</h2>
+          <p>
+            The COMPANY reserves the right to make any modifications to these
+            TERMS AND CONDITIONS<br />without prior notice. As the TERMS AND
+            CONDITIONS may be modified at any time, the USER<br />agrees to read
+            them carefully upon acceptance and be informed of the corresponding
+            modifications.<br />The new versions will take effect upon their
+            publication in the application.
+          </p>
+        </section>
 
-      <section>
-        <h2 class="text-xl font-semibold mb-2">3–25. Additional Terms</h2>
-        <ul class="list-disc pl-6 space-y-1">
-          <li><strong>Publications:</strong> Intended for users in Norway.</li>
-          <li>
-            <strong>Events:</strong> The company is not responsible for the planning,
-            products, services, or behavior at events.
-          </li>
-          <li>
-            <strong>Personalities:</strong> Not responsible for content or actions
-            of listed personalities.
-          </li>
-          <li>
-            <strong>Businesses or Services:</strong> The company disclaims responsibility
-            for their activities or offerings.
-          </li>
-          <li>
-            <strong>Users:</strong> Must be 18+ and provide accurate data.
-          </li>
-          <li>
-            <strong>Permitted Conduct:</strong> Misuse or IP infringement leads to
-            termination.
-          </li>
-          <li>
-            <strong>Reservations:</strong> App provides reservation vouchers only;
-            clients are responsible for fulfillment.
-          </li>
-          <li>
-            <strong>Information Collection:</strong> The app may store identification
-            and location data.
-          </li>
-          <li>
-            <strong>License & IP:</strong> Users grant rights to the company to use
-            content uploaded.
-          </li>
-          <li>
-            <strong>Prohibited Content:</strong> No publication of illegal or restricted
-            content.
-          </li>
-          <li>
-            <strong>Responsibility:</strong> Clients are responsible for legality
-            of their content/services.
-          </li>
-          <li>
-            <strong>App Modifications:</strong> The app may change without notice.
-          </li>
-          <li>
-            <strong>Costs:</strong> Currently free, but paid versions/services may
-            be introduced.
-          </li>
-          <li>
-            <strong>Termination & Modifications:</strong> Company may alter terms
-            or suspend users.
-          </li>
-          <li>
-            <strong>Unsubscribing & Deletion:</strong> Users can request deletion
-            via email.
-          </li>
-          <li>
-            <strong>Governing Law:</strong> Governed by Norwegian law, Oslo courts.
-          </li>
-        </ul>
-      </section>
+        <hr />
 
-      <section>
-        <h2 class="text-2xl font-semibold mb-4">Privacy Policy</h2>
-        <p class="mb-2">Effective Date: June 06, 2025</p>
-        <ul class="list-disc pl-6 space-y-1">
-          <li>
-            <strong>Consent:</strong> Using the app implies consent to this policy.
-          </li>
-          <li>
-            <strong>Purpose:</strong> Data is collected to tailor services and enable
-            functionality.
-          </li>
-          <li>
-            <strong>Automatically Collected Info:</strong> Includes location data
-            from device if permitted.
-          </li>
-          <li>
-            <strong>User-Provided Info:</strong> Required for profiles and reservations.
-          </li>
-          <li>
-            <strong>Profile Info:</strong> Name, email, birthdate, password, and
-            optional photo.
-          </li>
-          <li>
-            <strong>Reservation Info:</strong> ID number and data of third-party
-            beneficiaries.
-          </li>
-          <li><strong>Usage:</strong> Ensures service functionality.</li>
-          <li>
-            <strong>Security:</strong> The app applies strict measures to protect
-            user data.
-          </li>
-          <li>
-            <strong>Third Parties:</strong> May receive info for reservations. Users
-            share data at own risk.
-          </li>
-          <li>
-            <strong>User Rights:</strong> Access, correction, and deletion of data
-            under GDPR.
-          </li>
-          <li>
-            <strong>Retention:</strong> Data retained as long as needed for service
-            operation.
-          </li>
-          <li>
-            <strong>Deletion:</strong> Users must explicitly request data deletion.
-            Uninstalling is not enough.
-          </li>
-          <li>
-            <strong>Modifications:</strong> Policy may be updated without notice.
-          </li>
-          <li>
-            <strong>Habeas Data:</strong> Requests must be submitted in PDF via email
-            to info@festiva.no.
-          </li>
-          <li>
-            <strong>Unsubscribing:</strong> Data held for 30 days before full deletion.
-          </li>
-        </ul>
-      </section>
-    </article>
+        <section id="privacy">
+          <h2>Política de Privacidad</h2>
+          <h2>18. Implied Acceptance</h2>
+          <p>
+            When any modifications to these TERMS AND CONDITIONS are made, the
+            USER&#x27;s continued use<br />of THE APPLICATION constitutes
+            consent to such modifications. If the USER does not accept the<br
+            />modifications, they must request to unsubscribe from THE
+            APPLICATION.
+          </p>
+          <h2>19. Unsubscribing</h2>
+          <p>
+            The USER may request to unsubscribe from THE APPLICATION at any
+            time, following the<br />procedure established in the Privacy
+            Policy.
+          </p>
+          <h2>20. Deletion of USER Information</h2>
+          <p>
+            The personal data provided will be retained until the USER requests
+            its deletion or revokes their<br />consent, or until the termination
+            of the service subscribed to, or until the fulfillment of the TERMS<br
+            />AND CONDITIONS. To revoke consent, a request can be sent to the
+            email: info@festiva.no.<br />Individuals have the right to access
+            their personal data and to request the rectification of inaccurate<br
+            />data or, where appropriate, request their deletion when, among
+            other reasons, the data is no longer<br />necessary for the purposes
+            for which it was collected. For these purposes, the procedures
+            outlined in<br />THE APPLICATION&#x27;s Privacy Policy must be
+            followed.
+          </p>
+          <h2>21. Intellectual Property Claims</h2>
+          <p>
+            The CLIENT and/or USER who believes that any CONTENT published in
+            THE APPLICATION<br />infringes their property rights or those of a
+            third party may report it through the contact provided in<br />the
+            following clause, so that it may be removed and the information sent
+            to the rightful owner to take<br />the necessary legal actions.
+          </p>
+          <h2>22. Limitation of Liability</h2>
+          <p>
+            THE COMPANY shall not be liable for any indirect, incidental,
+            special, consequential, or punitive<br />damages, including but not
+            limited to loss of profits, data, goodwill, or other intangible
+            losses<br />resulting from (i) your use or inability to use THE
+            APPLICATION; (ii) any conduct or content of<br />any third party on
+            THE APPLICATION; or (iii) unauthorized access, use or alteration of
+            your<br />transmissions or content, even if THE COMPANY has been
+            advised of the possibility of such<br />damages .
+          </p>
+          <h2>23. Contact</h2>
+          <p>
+            Any communication directed to the COMPANY regarding the TERMS AND
+            CONDITIONS must be<br />made through the email address:
+            info@festiva. no
+          </p>
+          <h2>24. Governing Law and Jurisdiction</h2>
+          <p>
+            These TERMS AND CONDITIONS shall be governed by and construed in
+            accordance with the laws<br />of Norway. Any disputes arising out of
+            or in connection with these TERMS AND CONDITIONS<br />shall be
+            subject to the exclusive jurisdiction of the courts of Oslo, Norway.
+          </p>
+          <h2>25. Effective Date</h2>
+          <p>These TERMS AND CONDITIONS are effective from June 06, 2025</p>
+          <p>Privacy Policy</p>
+          <p>Effective Date: June 06, 2025</p>
+          <h2>1. Consent</h2>
+          <p>
+            By using THE APPLICATION and accepting the TERMS AND CONDITIONS, the
+            USER consents<br />to all provisions contained in this Privacy
+            Policy. The concepts and references in this Privacy Policy<br />will
+            have the same meanings as those defined in the TERMS AND CONDITIONS.
+            THE<br />APPLICATION reserves the right to limit USER access to all
+            or part of the SERVICES, setting<br />necessary conditions regarding
+            the USER&#x27;s age, identification, current registration status,
+            and other<br />similar factors.
+          </p>
+          <h2>2. Purpose of Information</h2>
+          <p>
+            Some SERVICES provided by THE APPLICATION do not require the USER to
+            provide any<br />information. However, to offer a service more
+            suited to the USER&#x27;s needs, THE APPLICATION<br />requires
+            authorization to know the location of unregistered USERS to show
+            options closest to their<br />geographical position. To access other
+            SERVICES, such as reservations, THE APPLICATION<br />requires the
+            USER to provide information related to their identification,
+            location, contact, and age, as<br />well as that of the consumers
+            benefiting from such SERVICES.
+          </p>
+          <h2>3. Automatically Collected Information</h2>
+          <p>
+            If granted permission directly from the USER&#x27;s mobile device,
+            THE APPLICATION will<br />automatically collect geolocation
+            information from the device, derived from its IP address or GPS<br
+            />system, depending on the configuration options activated by the
+            USER on their mobile device.
+          </p>
+          <h2>4. Information Provided by the USER</h2>
+          <p>
+            THE APPLICATION requires the USER to provide information about
+            themselves to enable the use<br />of some SERVICES, as well as
+            information about third parties benefiting from its use in the case
+            of<br />reservations. The USER is responsible for the truthfulness,
+            accuracy, and completeness of the
+          </p>
+          <p>
+            information provided to THE APPLICATION. The USER declares that all
+            information provided to<br />THE APPLICATION is complete, true, and
+            updated at all times.
+          </p>
+          <p>4.1 Information Provided by the USER for Profile Creation</p>
+          <p>
+            THE APPLICATION requests that the USER provide, at a minimum, their
+            first name, last name,<br />email address, date of birth, and
+            password to create a profile. A photo may also be provided to
+            identify<br />the profile.
+          </p>
+          <p>4.2 Information Provided by the USER for Reservation Services</p>
+          <p>
+            To prevent identity fraud, THE APPLICATION requires the USER to
+            provide a government -issued<br />national ID number, such as a
+            personal number (personnummer), passport or driver&#x27;s license,
+            when<br />making reservations. Information about consumers
+            benefiting from the reservation service may also<br />be provided to
+            facilitate the execution of the reservation by persons other than
+            the USER.
+          </p>
+          <p>
+            4.3 Information Provided by the USER about Beneficiary Consumers
+          </p>
+          <p>
+            With the third party&#x27;s consent, the USER may provide
+            information about the name, email, and phone<br />number of those
+            benefiting from the reservation.
+          </p>
+          <h2>5. Use of Collected Information</h2>
+          <p>
+            The information collected about USERS and beneficiary consumers will
+            be used to ensure the optimal<br />functioning of the SERVICES
+            provided by THE APPLICATION.
+          </p>
+          <h2>6. Security of User and Consumer Information</h2>
+          <p>
+            THE APPLICATION will appropriately handle CONTENT, personal data,
+            and confidential<br />information of USERS and commits to doing
+            everything within its power to ensure the privacy of<br />CONTENT
+            and data provided by USERS. It pledges to take extreme precautions
+            and give maximum<br />attention to security measures aimed at
+            ensuring the proper handling of all data collected from<br />USERS.
+          </p>
+          <h2>7. Third Parties</h2>
+          <p>
+            To provide the reservation service and allow the USER and CLIENT to
+            request the execution of the<br />reservation, THE APPLICATION
+            reserves the right to transmit copies of information about the USER<br
+            />and beneficiary consumers to third parties necessary for their
+            identification. If the USER chooses to<br />disclose personal
+            information to third parties, it is done at their own risk, and THE
+            APPLICATION<br />is not responsible.
+          </p>
+          <h2>8. USER and CLIENT Rights</h2>
+          <p>
+            USERS and CLIENTS have the right to request the information they
+            have provided to THE<br />APPLICATION. In compliance with the
+            General Data Protection Regulation (GDPR), THE<br />APPLICATION will
+            respond to such requests within one month from the date of receipt.
+            This period<br />may be extended by an additional two months if the
+            request is complex or if multiple requests are<br />received from
+            the same user. In such cases, THE APPLICATION will inform the user
+            of the extension<br />and the reasons for the delay within the
+            initial one -month period
+          </p>
+          <h2>9. Retention of Information</h2>
+          <p>
+            The information collected about USERS and beneficiary consumers will
+            be retained by THE<br />APPLICATION for as long as necessary to
+            ensure the optimal functioning of THE APPLICATION<br />and the
+            SERVICES provided. Additionally, the USER accepts and understands
+            that the portal stores<br />certain general information, such as the
+            number and frequency of visitors, territories, consultation<br
+            />times, most visited sections, etc., for statistical purposes,
+            allowing the identification of indicators<br />reflecting SERVICE
+            preferences by USERS to optimize the quality of the most frequently
+            used<br />SERVICES.
+          </p>
+          <h2>10. Deletion of Collected Data</h2>
+          <p>
+            Uninstalling THE APPLICATION does not alone imply the deletion of
+            provided data; the USER must<br />request to unsubscribe as
+            stipulated by THE APPLICATION. Once data deletion is requested, THE<br
+            />APPLICATION will delete the data within one month of the deletion
+            request, in compliance with<br />GDPR regulations.
+          </p>
+          <h2>11. Modifications to the Privacy Policy</h2>
+          <p>
+            THE COMPANY reserves the right to make any modifications to this
+            Privacy Policy without prior<br />notice, committing only to notify
+            USERS of the validity of the modifications.
+          </p>
+          <h2>12. Procedure for Exercising Habeas Data Rights</h2>
+          <p>
+            To exercise the right of habeas data, THE APPLICATION requires the
+            USER to send a PDF document<br />to the email address info@festiva.
+            no with their request, including the following: full name as it<br
+            />appears on identification, contact details (physical address and
+            phone numbers), means to receive a<br />response, reason(s) for the
+            request with a brief description of the activity (access, update,
+            rectify,<br />revoke, delete, access information), identification
+            number, and a scanned identity document.
+          </p>
+          <h2>13. Unsubscribing</h2>
+          <p>
+            The USER may request the deletion of their data or unsubscribe from
+            the service. Upon such a<br />request, THE APPLICATION will retain
+            the data for thirty (30) days, after which it will be<br
+            />permanently deleted if the USER does not log in again within that
+            period. This retention period is<br />intended to provide the USER
+            with a grace period in case they wish to reactivate their account.
+            In<br />compliance with GDPR regulations, THE APPLICATION will not
+            retain any personal data longer<br />than necessary. Should the USER
+            wish to exercise their right to erasure, as outlined in the GDPR,<br
+            />THE APPLICATION will delete their data promptly upon request,
+            except where retention is required<br />by law or necessary for
+            legitimate business purposes, which will be clearly justified and
+            documented
+          </p>
+          <h2>14. Effective Date</h2>
+          <p>This Privacy Policy is effective from June 06, 2025.</p>
+        </section>
+      </article>
+    </main>
 
-    <footer class="mt-16 text-sm text-center text-gray-500">
-      &copy; {new Date().getFullYear()} Festiva. All rights reserved.
+    <footer class="border-t">
+      <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-gray-600">
+        © {new Date().getFullYear()} Festiva — Conversión automática del PDF sin
+        cambios sustanciales en el contenido.
+      </div>
     </footer>
-  </main>
-</Layout>
+  </body>
+</html>
