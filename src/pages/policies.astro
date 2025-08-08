@@ -1,51 +1,188 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const policies = [
-  {
-    title: "Data Collection",
-    content:
-      "We collect personal information such as your name, email address, and preferences when you interact with our app.",
-  },
-  {
-    title: "Use of Information",
-    content:
-      "We use your data to enhance user experience, personalize content, and process secure transactions.",
-  },
-  {
-    title: "Cookies",
-    content:
-      "This app uses cookies to analyze traffic and improve functionality. You can disable cookies in your browser settings.",
-  },
-  {
-    title: "Data Sharing",
-    content:
-      "We do not sell or share your personal information with third parties without your consent, unless required by law.",
-  },
-  {
-    title: "Your Rights",
-    content:
-      "You have the right to access, correct, or delete your personal information at any time.",
-  },
-];
 ---
 
 <Layout>
-  <main class="max-w-3xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8 text-center">
+      Terms and Conditions & Privacy Policy
+    </h1>
 
-    <section class="space-y-8">
-      {
-        policies.map((policy) => (
-          <div>
-            <h2 class="text-2xl font-semibold mb-2">{policy.title}</h2>
-            <p class="leading-relaxed">{policy.content}</p>
-          </div>
-        ))
-      }
-    </section>
+    <article class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">Terms and Conditions of Use</h2>
+        <p class="mb-2">Effective Date: June 06, 2025</p>
+        <p>
+          These Terms and Conditions regulate the use of the Festiva mobile
+          application for Android and iOS devices. Use of the application is
+          prohibited without full acceptance of these terms.
+        </p>
+      </section>
 
-    <footer class="mt-12 text-sm text-center">
+      <section>
+        <h2 class="text-xl font-semibold mb-2">1. Definitions</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            <strong>Clients:</strong> Individuals or organizations offering services
+            or content within the app.
+          </li>
+          <li>
+            <strong>Personalities:</strong> Social media influencers or artists.
+          </li>
+          <li>
+            <strong>Users:</strong> Anyone who installs or uses the application.
+          </li>
+          <li>
+            <strong>Businesses or Services:</strong> Commercial entities listed in
+            the application.
+          </li>
+          <li>
+            <strong>Beneficiary Consumers:</strong> Individuals listed in reservations.
+          </li>
+          <li>
+            <strong>Content:</strong> Any data or media uploaded by users or clients.
+          </li>
+          <li>
+            <strong>Event:</strong> A planned activity organized and executed by
+            a party at a specific location.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-2">2. Application</h2>
+        <p>
+          Festiva provides services such as publishing event and service
+          information, ticket reservations, and audio playback.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-2">3–25. Additional Terms</h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Publications:</strong> Intended for users in Norway.</li>
+          <li>
+            <strong>Events:</strong> The company is not responsible for the planning,
+            products, services, or behavior at events.
+          </li>
+          <li>
+            <strong>Personalities:</strong> Not responsible for content or actions
+            of listed personalities.
+          </li>
+          <li>
+            <strong>Businesses or Services:</strong> The company disclaims responsibility
+            for their activities or offerings.
+          </li>
+          <li>
+            <strong>Users:</strong> Must be 18+ and provide accurate data.
+          </li>
+          <li>
+            <strong>Permitted Conduct:</strong> Misuse or IP infringement leads to
+            termination.
+          </li>
+          <li>
+            <strong>Reservations:</strong> App provides reservation vouchers only;
+            clients are responsible for fulfillment.
+          </li>
+          <li>
+            <strong>Information Collection:</strong> The app may store identification
+            and location data.
+          </li>
+          <li>
+            <strong>License & IP:</strong> Users grant rights to the company to use
+            content uploaded.
+          </li>
+          <li>
+            <strong>Prohibited Content:</strong> No publication of illegal or restricted
+            content.
+          </li>
+          <li>
+            <strong>Responsibility:</strong> Clients are responsible for legality
+            of their content/services.
+          </li>
+          <li>
+            <strong>App Modifications:</strong> The app may change without notice.
+          </li>
+          <li>
+            <strong>Costs:</strong> Currently free, but paid versions/services may
+            be introduced.
+          </li>
+          <li>
+            <strong>Termination & Modifications:</strong> Company may alter terms
+            or suspend users.
+          </li>
+          <li>
+            <strong>Unsubscribing & Deletion:</strong> Users can request deletion
+            via email.
+          </li>
+          <li>
+            <strong>Governing Law:</strong> Governed by Norwegian law, Oslo courts.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">Privacy Policy</h2>
+        <p class="mb-2">Effective Date: June 06, 2025</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            <strong>Consent:</strong> Using the app implies consent to this policy.
+          </li>
+          <li>
+            <strong>Purpose:</strong> Data is collected to tailor services and enable
+            functionality.
+          </li>
+          <li>
+            <strong>Automatically Collected Info:</strong> Includes location data
+            from device if permitted.
+          </li>
+          <li>
+            <strong>User-Provided Info:</strong> Required for profiles and reservations.
+          </li>
+          <li>
+            <strong>Profile Info:</strong> Name, email, birthdate, password, and
+            optional photo.
+          </li>
+          <li>
+            <strong>Reservation Info:</strong> ID number and data of third-party
+            beneficiaries.
+          </li>
+          <li><strong>Usage:</strong> Ensures service functionality.</li>
+          <li>
+            <strong>Security:</strong> The app applies strict measures to protect
+            user data.
+          </li>
+          <li>
+            <strong>Third Parties:</strong> May receive info for reservations. Users
+            share data at own risk.
+          </li>
+          <li>
+            <strong>User Rights:</strong> Access, correction, and deletion of data
+            under GDPR.
+          </li>
+          <li>
+            <strong>Retention:</strong> Data retained as long as needed for service
+            operation.
+          </li>
+          <li>
+            <strong>Deletion:</strong> Users must explicitly request data deletion.
+            Uninstalling is not enough.
+          </li>
+          <li>
+            <strong>Modifications:</strong> Policy may be updated without notice.
+          </li>
+          <li>
+            <strong>Habeas Data:</strong> Requests must be submitted in PDF via email
+            to info@festiva.no.
+          </li>
+          <li>
+            <strong>Unsubscribing:</strong> Data held for 30 days before full deletion.
+          </li>
+        </ul>
+      </section>
+    </article>
+
+    <footer class="mt-16 text-sm text-center text-gray-500">
       &copy; {new Date().getFullYear()} Festiva. All rights reserved.
     </footer>
   </main>
