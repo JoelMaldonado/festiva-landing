@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.festiva.core",
+      "sha256_cert_fingerprints": [
+        "95:76:55:1B:AC:E7:37:56:08:6B:4F:C2:D5:29:9A:1D:9C:C6:61:F1"
+      ]
+    }
+  }
+]
