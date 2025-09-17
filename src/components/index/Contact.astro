@@ -29,11 +29,8 @@ const signupItems = Array.from({ length: repeatCount });
         Oslo’s top nightlife spots are already on <span
           class="font-semibold text-p1">Festiva</span
         >. Is yours?<br />
-        You're missing out on visibility every night. Connect with us today.<br
-        />
-        <span class="font-bold text-p1"
-          >This is your moment — don’t miss it.</span
-        >
+        You're missing out on visibility every night. Connect with us today.<br />
+        <span class="font-bold text-p1">This is your moment — don’t miss it.</span>
       </p>
     </div>
 
@@ -43,7 +40,7 @@ const signupItems = Array.from({ length: repeatCount });
         <p class="mb-6 text-gray-400">
           Become part of Norway’s new nightlife ecosystem.
         </p>
-        <form class="space-y-4">
+        <form id="contactForm" class="space-y-4" novalidate>
           <InputField
             id="name"
             label="Full Name"
@@ -72,14 +69,28 @@ const signupItems = Array.from({ length: repeatCount });
             placeholder="Club, Bar, Restaurant"
             value=""
           />
+
+          <!-- Botón con estado de carga -->
           <button
             id="btnSend"
             type="button"
             data-confetti-button
-            class="w-full py-3 font-semibold text-white bg-p1 rounded-lg hover:bg-pink-600"
+            class="w-full py-3 font-semibold text-white bg-p1 rounded-lg hover:bg-pink-600 transition disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            Send Message
+            <svg id="btnSpinner" class="animate-spin h-5 w-5 hidden" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4A4 4 0 0 0 8 12H4z"></path>
+            </svg>
+            <span id="btnLabel">Send Message</span>
           </button>
+
+          <!-- Mensaje de estado (éxito / error) con animación -->
+          <div
+            id="formStatus"
+            class="hidden rounded-xl border px-4 py-3 text-sm mt-3 aria-[busy=true]:opacity-80 transition-all duration-300"
+            role="status"
+            aria-live="polite"
+          ></div>
         </form>
       </div>
 
@@ -116,22 +127,126 @@ const signupItems = Array.from({ length: repeatCount });
 
 <script type="module" is:inline>
   const btnSend = document.getElementById("btnSend");
+  const btnLabel = document.getElementById("btnLabel");
+  const btnSpinner = document.getElementById("btnSpinner");
+  const form = document.getElementById("contactForm");
+
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const businessInput = document.getElementById("businessName");
   const localInput = document.getElementById("local");
 
-  btnSend.addEventListener("click", () => {
-    const formData = {
-      name: nameInput.value,
-      email: emailInput.value,
-      business: businessInput.value,
-      local: localInput.value,
-    };
-    sendFormData(formData);
-  });
+  const statusBox = document.getElementById("formStatus");
 
-  function sendFormData(formData) {
-    console.log("Sending form data:", formData);
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setLoading(isLoading) {
+    btnSend.disabled = isLoading;
+    btnSpinner.classList.toggle("hidden", !isLoading);
+    btnLabel.textContent = isLoading ? "Sending..." : "Send Message";
+    statusBox.setAttribute("aria-busy", isLoading ? "true" : "false");
   }
+
+  function showStatus(type, message) {
+    // type: 'success' | 'error' | 'info'
+    const base =
+      "rounded-xl px-4 py-3 text-sm mt-3 transition-all duration-300";
+    const palette = {
+      success:
+        "border border-green-500/30 bg-green-500/10 text-green-300 shadow-[0_0_0_1px_rgba(34,197,94,0.15)]",
+      error:
+        "border border-red-500/30 bg-red-500/10 text-red-300 shadow-[0_0_0_1px_rgba(239,68,68,0.15)]",
+      info:
+        "border border-blue-500/30 bg-blue-500/10 text-blue-300 shadow-[0_0_0_1px_rgba(59,130,246,0.15)]",
+    };
+
+    statusBox.className = `${base} ${palette[type]}`;
+    statusBox.textContent = message;
+    statusBox.classList.remove("hidden", "opacity-0", "-translate-y-2");
+    statusBox.classList.add("opacity-100", "translate-y-0");
+
+    // Ocultar suave después de 4s (solo en éxito/info)
+    if (type !== "error") {
+      setTimeout(() => {
+        statusBox.classList.add("opacity-0", "-translate-y-2");
+        setTimeout(() => {
+          statusBox.classList.add("hidden");
+        }, 250);
+      }, 4000);
+    }
+  }
+
+  function softValidate() {
+    const missing = [];
+    if (!nameInput.value.trim()) missing.push("Full Name");
+    if (!emailInput.value.trim() || !EMAIL_RE.test(emailInput.value.trim()))
+      missing.push("Valid Email");
+    if (!businessInput.value.trim()) missing.push("Business Name");
+    if (!localInput.value.trim()) missing.push("Venue Type");
+
+    if (missing.length) {
+      showStatus(
+        "error",
+        `Please complete: ${missing.join(", ")}.`
+      );
+      return false;
+    }
+    return true;
+  }
+
+  function clearForm() {
+    form.reset();
+  }
+
+  btnSend.addEventListener("click", async () => {
+    if (!softValidate()) return;
+
+    const formData = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      clubName: businessInput.value.trim(),
+      address: localInput.value.trim(),
+    };
+
+    setLoading(true);
+    showStatus("info", "Sending your message…");
+
+    try {
+      const url = "https://api.festiva.no:8001/api/mail/send";
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const text = await response.text().catch(() => "");
+        throw new Error(`Server error ${response.status}${text ? `: ${text}` : ""}`);
+      }
+
+      // opcional: leer body por si tu API manda algo
+      // const data = await response.json();
+
+      showStatus(
+        "success",
+        "🎉 Message sent! We'll get back to you shortly."
+      );
+
+      // Limpia el formulario con un pequeño retraso para que se perciba el éxito
+      setTimeout(() => {
+        clearForm();
+      }, 200);
+
+      // (Opcional) lanzar confetti si tu script lo maneja vía data-confetti-button
+
+    } catch (error) {
+      console.error("Error enviando formulario:", error);
+      showStatus(
+        "error",
+        "We couldn't send your message right now. Please try again in a moment."
+      );
+    } finally {
+      setLoading(false);
+    }
+  });
 </script>
