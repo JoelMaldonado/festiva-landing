@@ -1,0 +1,91 @@
+---
+import EventCard from "./components/EventCard.astro";
+import Pagination from "./components/Pagination.astro";
+
+export const prerender = false; // render por petición (no estático)
+
+// Lee ?page=&limit= desde la URL actual (API oficial: Astro.url)
+const url = Astro.url;
+const page = Math.max(Number(url.searchParams.get("page") ?? "1"), 1);
+const limit = Math.max(Number(url.searchParams.get("limit") ?? "12"), 1);
+
+// Llama a tu endpoint interno (proxy a tu backend)
+const apiURL = new URL(
+  `/events/api/eventsPaged?page=${page}&limit=${limit}`,
+  Astro.url
+);
+const resp = await fetch(apiURL);
+
+if (!resp.ok) {
+  throw new Error(`API error ${resp.status}`);
+}
+const payload = (await resp.json()) as {
+  isSuccess: boolean;
+  code: number;
+  message: string;
+  data: { items: any[]; total: number; page: number; limit: number };
+};
+
+const items = payload?.data?.items ?? [];
+const total = Number(payload?.data?.total ?? 0);
+const totalPages = Math.max(Math.ceil(total / limit), 1);
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Eventos — Festiva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="min-h-screen bg-neutral-900 text-white">
+    <header
+      class="sticky top-0 z-10 backdrop-blur supports-[backdrop-filter]:bg-neutral-900/70 border-b border-white/10"
+    >
+      <div
+        class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between"
+      >
+        <h1 class="text-xl font-semibold tracking-tight">Eventos</h1>
+        <form method="GET" class="flex items-center gap-2">
+          <input type="hidden" name="page" value="1" />
+          <label class="text-sm text-neutral-300">Por página</label>
+          <select
+            name="limit"
+            class="bg-neutral-800 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pink-500/60"
+            onchange="this.form.submit()"
+          >
+            <option value="6" selected={limit === 6}>6</option>
+            <option value="12" selected={limit === 12}>12</option>
+            <option value="24" selected={limit === 24}>24</option>
+            <option value="48" selected={limit === 48}>48</option>
+          </select>
+        </form>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8">
+      <!-- Resumen -->
+      <div class="mb-6 flex items-center justify-between">
+        <p class="text-sm text-neutral-300">
+          Página <span class="font-semibold text-white">{page}</span> de
+          <span class="font-semibold text-white">{totalPages}</span> — {total} eventos
+        </p>
+      </div>
+
+      <!-- Grid de cards -->
+      <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {items.map((it) => <EventCard item={it} />)}
+      </section>
+
+      <!-- Paginación -->
+      <div class="mt-10">
+        <Pagination page={page} limit={limit} total={total} />
+      </div>
+    </main>
+
+    <footer class="mt-16 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 py-8 text-sm text-neutral-400">
+        © {new Date().getFullYear()} Festiva
+      </div>
+    </footer>
+  </body>
+</html>
