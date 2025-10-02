@@ -3,9 +3,12 @@ const { id, label, value, name, placeholder = "", type = "text" } = Astro.props;
 ---
 
 <div class="w-full px-4 py-2 transition border rounded-xl border-grey1">
-  <label for={name} class="block text-sm font-medium text-p1">
-    {label}
-  </label>
+  <div class="flex flex-row items-center justify-between">
+    <label for={name} class="block text-sm font-medium text-p1">
+      {label}
+    </label>
+    <span class="text-xs text-gray-500">Max 50 characters</span>
+  </div>
   <input
     type={type}
     id={id}
