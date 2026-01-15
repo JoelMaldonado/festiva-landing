@@ -5,8 +5,7 @@
       "namespace": "android_app",
       "package_name": "com.festiva.core",
       "sha256_cert_fingerprints": [
-        "1B:34:D0:20:B4:21:CA:89:9B:24:FD:A5:6D:C9:81:81:21:C7:61:74:61:CB:66:AA:14:F9:98:C8:54:81:9D:32",
-        "16:B5:87:E0:89:F9:F7:ED:18:12:C6:F7:2B:96:12:20:F0:E3:FF:32:74:4A:B6:E8:3A:08:FD:95:D9:15:38:23"
+        "1B:34:D0:20:B4:21:CA:89:9B:24:FD:A5:6D:C9:81:81:21:C7:61:74:61:CB:66:AA:14:F9:98:C8:54:81:9D:32"
       ]
     }
   }
