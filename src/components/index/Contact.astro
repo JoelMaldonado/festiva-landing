@@ -29,8 +29,11 @@ const signupItems = Array.from({ length: repeatCount });
         Oslo’s top nightlife spots are already on <span
           class="font-semibold text-p1">Festiva</span
         >. Is yours?<br />
-        You're missing out on visibility every night. Connect with us today.<br />
-        <span class="font-bold text-p1">This is your moment — don’t miss it.</span>
+        You're missing out on visibility every night. Connect with us today.<br
+        />
+        <span class="font-bold text-p1"
+          >This is your moment — don’t miss it.</span
+        >
       </p>
     </div>
 
@@ -81,9 +84,24 @@ const signupItems = Array.from({ length: repeatCount });
             data-confetti-button
             class="w-full py-3 font-semibold text-white bg-p1 rounded-lg hover:bg-pink-600 transition disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            <svg id="btnSpinner" class="animate-spin h-5 w-5 hidden" viewBox="0 0 24 24" aria-hidden="true">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4A4 4 0 0 0 8 12H4z"></path>
+            <svg
+              id="btnSpinner"
+              class="animate-spin h-5 w-5 hidden"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+                fill="none"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 0 1 8-8v4A4 4 0 0 0 8 12H4z"></path>
             </svg>
             <span id="btnLabel">Send Message</span>
           </button>
@@ -94,7 +112,8 @@ const signupItems = Array.from({ length: repeatCount });
             class="hidden rounded-xl border px-4 py-3 text-sm mt-3 aria-[busy=true]:opacity-80 transition-all duration-300"
             role="status"
             aria-live="polite"
-          ></div>
+          >
+          </div>
         </form>
       </div>
 
@@ -160,8 +179,7 @@ const signupItems = Array.from({ length: repeatCount });
         "border border-green-500/30 bg-green-500/10 text-green-300 shadow-[0_0_0_1px_rgba(34,197,94,0.15)]",
       error:
         "border border-red-500/30 bg-red-500/10 text-red-300 shadow-[0_0_0_1px_rgba(239,68,68,0.15)]",
-      info:
-        "border border-blue-500/30 bg-blue-500/10 text-blue-300 shadow-[0_0_0_1px_rgba(59,130,246,0.15)]",
+      info: "border border-blue-500/30 bg-blue-500/10 text-blue-300 shadow-[0_0_0_1px_rgba(59,130,246,0.15)]",
     };
 
     statusBox.className = `${base} ${palette[type]}`;
@@ -189,10 +207,7 @@ const signupItems = Array.from({ length: repeatCount });
     if (!localInput.value.trim()) missing.push("Venue Type");
 
     if (missing.length) {
-      showStatus(
-        "error",
-        `Please complete: ${missing.join(", ")}.`
-      );
+      showStatus("error", `Please complete: ${missing.join(", ")}.`);
       return false;
     }
     return true;
@@ -216,7 +231,8 @@ const signupItems = Array.from({ length: repeatCount });
     showStatus("info", "Sending your message…");
 
     try {
-      const url = "https://api.festiva.no:8001/api/mail/send";
+      // const url = "https://api.festiva.no:8001/api/mail/send";
+      const url = "https://api.festiva.no/general/api/mail/send";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -225,16 +241,15 @@ const signupItems = Array.from({ length: repeatCount });
 
       if (!response.ok) {
         const text = await response.text().catch(() => "");
-        throw new Error(`Server error ${response.status}${text ? `: ${text}` : ""}`);
+        throw new Error(
+          `Server error ${response.status}${text ? `: ${text}` : ""}`,
+        );
       }
 
       // opcional: leer body por si tu API manda algo
       // const data = await response.json();
 
-      showStatus(
-        "success",
-        "🎉 Message sent! We'll get back to you shortly."
-      );
+      showStatus("success", "🎉 Message sent! We'll get back to you shortly.");
 
       // Limpia el formulario con un pequeño retraso para que se perciba el éxito
       setTimeout(() => {
@@ -242,12 +257,11 @@ const signupItems = Array.from({ length: repeatCount });
       }, 200);
 
       // (Opcional) lanzar confetti si tu script lo maneja vía data-confetti-button
-
     } catch (error) {
       console.error("Error enviando formulario:", error);
       showStatus(
         "error",
-        "We couldn't send your message right now. Please try again in a moment."
+        "We couldn't send your message right now. Please try again in a moment.",
       );
     } finally {
       setLoading(false);
