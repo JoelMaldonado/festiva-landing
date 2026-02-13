@@ -2,6 +2,9 @@
 import "../styles/global.css";
 const { title = "Festiva" } = Astro.props;
 import "aos/dist/aos.css";
+
+// const siteKey = import.meta.env.RECAPTCHA_SITE_KEY; TODO usar .env despues
+const siteKey = "6LfMkmosAAAAAOZA8-lslO5b_pFQNg06sHk3ZddU";
 ---
 
 <html lang="en">
@@ -10,11 +13,15 @@ import "aos/dist/aos.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" />
+    <script
+      src={`https://www.google.com/recaptcha/api.js?render=${siteKey}`}
+      async
+      defer></script>
   </head>
   <body class="bg-darkB0 scroll-smooth">
     <slot />
 
-    <script>
+    <script type="module">
       import AOS from "aos";
       AOS.init();
     </script>

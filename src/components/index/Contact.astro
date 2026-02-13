@@ -220,11 +220,33 @@ const signupItems = Array.from({ length: repeatCount });
   btnSend.addEventListener("click", async () => {
     if (!softValidate()) return;
 
+    if (!window.grecaptcha) {
+      showStatus(
+        "error",
+        "reCAPTCHA not loaded. Please refresh and try again.",
+      );
+      return;
+    }
+    const SITE_KEY = "6LfMkmosAAAAAOZA8-lslO5b_pFQNg06sHk3ZddU";
+    const RECAPTCHA_ACTION = "contact_form";
+    let recaptchaToken = "";
+    try {
+      recaptchaToken = await grecaptcha.execute(SITE_KEY, {
+        action: RECAPTCHA_ACTION,
+      });
+    } catch (e) {
+      console.error("reCAPTCHA execute failed:", e);
+      showStatus("error", "Could not verify reCAPTCHA. Please try again.");
+      return;
+    }
+
     const formData = {
       name: nameInput.value.trim(),
       email: emailInput.value.trim(),
       clubName: businessInput.value.trim(),
       address: localInput.value.trim(),
+      recaptchaToken,
+      recaptchaAction: "contact_form",
     };
 
     setLoading(true);
